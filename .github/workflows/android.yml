@@ -124,7 +124,21 @@ jobs:
           else
             echo "Não consegui baixar a Satoshi; a interface usa a Montserrat"
           fi
-          ls -la "$FONTS"
+          # marca NANQUIM: Chillax Bold (Fontshare, ITF Free Font License)
+          cp "$FONTS/Montserrat-Bold.ttf" "$FONTS/brand-bold.otf"
+          if curl -fsSL --retry 3 -o "$tmp/chillax.zip" "https://api.fontshare.com/v2/fonts/download/chillax" \
+             && unzip -q -o "$tmp/chillax.zip" -d "$tmp/c"; then
+            f=$(find "$tmp/c" -type f -iname "Chillax-Bold.otf" | head -n1)
+            [ -z "$f" ] && f=$(find "$tmp/c" -type f -iname "Chillax-Bold.ttf" | head -n1)
+            if [ -n "$f" ]; then cp "$f" "$FONTS/brand-bold.otf"; echo "Chillax Bold: $f"; else echo "Chillax Bold não encontrada"; fi
+          else
+            echo "Não consegui baixar a Chillax; a marca usa a Montserrat Bold"
+          fi
+          # as mesmas fontes para a abertura nativa (Java)
+          RES=krita/packaging/android/apk/res/font
+          cp "$FONTS/brand-bold.otf" "$RES/brand_bold.otf"
+          cp "$FONTS/ui-regular.otf" "$RES/ui_regular.otf"
+          ls -la "$FONTS" "$RES"
 
       - name: Java 17
         uses: actions/setup-java@v4

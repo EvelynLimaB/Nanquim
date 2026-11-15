@@ -33,6 +33,7 @@
 | Design novo, etapa 7 · peça 2: dock do polegar (navegar, refazer, desfazer, cor), lado da barra, dedo sem pintar | Em teste | 0052 |
 | Design novo, etapa 7 · peça 3: painéis sobrepostos com alfinete, popover de cor, ajustes do pincel fixados com prévia, faixas de largura | Em teste | 0053 |
 | Design novo, etapa 7 · peça 4: roda de atalhos (camadas, matiz e triângulo de cor) no botão da S Pen e no toque longo da cor | Em teste | 0054 |
+| Ícone Bico-gota (app, abertura, galeria) e marca NANQUIM em Chillax Bold | Em teste | 0055 |
 | Versão para Windows (usa o modo Clássico por padrão) | Ideia | — |
 
 ## Importador `.sut`

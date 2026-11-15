@@ -29,6 +29,10 @@
 | Modo de interface "Clássico" (desktop), alternável no menu Nanquim | Em teste | 0033 |
 | Ícones dos painéis no estilo do design; "Abrir com" por extensão; limites do time-lapse; cronômetros só com -DNANQUIM_TIMING | Em teste | 0033 |
 | Chave de assinatura: fluxo que renova o cache a cada 3 dias (definitivo: segredos do repositório) | Feito | workflow |
+| Design novo, etapa 7 · peça 1: paleta, fonte Satoshi, estados de toque, pairar da S Pen e foco | Em teste | 0051 |
+| Design novo, etapa 7 · peça 2: dock do polegar (navegar, refazer, desfazer, cor), lado da barra, dedo sem pintar | Em teste | 0052 |
+| Design novo, etapa 7 · peça 3: painéis sobrepostos com alfinete, popover de cor, faixas de largura | Próximo | — |
+| Design novo, etapa 7 · peça 4: roda de atalhos (camadas, matiz e triângulo de cor) | Próximo | — |
 | Versão para Windows (usa o modo Clássico por padrão) | Ideia | — |
 
 ## Importador `.sut`

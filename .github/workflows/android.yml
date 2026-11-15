@@ -105,6 +105,27 @@ jobs:
           cp "$FONTS/Montserrat-Bold.ttf" "$RES/montserrat_bold.ttf"
           ls -la "$FONTS" "$RES"
 
+      - name: Fonte da interface (Satoshi, ITF Free Font License; reserva Montserrat)
+        shell: bash
+        run: |
+          FONTS=krita/krita/data/splash/fonts
+          cp "$FONTS/Montserrat-Regular.ttf" "$FONTS/ui-regular.otf"
+          cp "$FONTS/Montserrat-Medium.ttf" "$FONTS/ui-medium.otf"
+          cp "$FONTS/Montserrat-Bold.ttf" "$FONTS/ui-bold.otf"
+          tmp=$(mktemp -d)
+          if curl -fsSL --retry 3 -o "$tmp/satoshi.zip" "https://api.fontshare.com/v2/fonts/download/satoshi" \
+             && unzip -q -o "$tmp/satoshi.zip" -d "$tmp/s"; then
+            for w in Regular Medium Bold; do
+              f=$(find "$tmp/s" -type f -iname "Satoshi-$w.otf" | head -n1)
+              [ -z "$f" ] && f=$(find "$tmp/s" -type f -iname "Satoshi-$w.ttf" | head -n1)
+              lw=$(echo "$w" | tr 'A-Z' 'a-z')
+              if [ -n "$f" ]; then cp "$f" "$FONTS/ui-$lw.otf"; echo "Satoshi $w: $f"; else echo "Satoshi $w não encontrada, fica a Montserrat"; fi
+            done
+          else
+            echo "Não consegui baixar a Satoshi; a interface usa a Montserrat"
+          fi
+          ls -la "$FONTS"
+
       - name: Java 17
         uses: actions/setup-java@v4
         with:

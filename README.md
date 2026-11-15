@@ -36,4 +36,4 @@ O Krita é software livre sob a GNU GPL v3 ou posterior, e o Nanquim segue a mes
 
 ## Fontes
 
-O Nanquim usa a família **Montserrat** (Julieta Ulanovsky e colaboradores), sob a SIL Open Font License 1.1. Os arquivos são baixados pelo CI no momento da compilação.
+A interface usa a **Satoshi** (Indian Type Foundry, distribuída pela Fontshare sob a ITF Free Font License) e os balões de texto usam a **Montserrat** (Julieta Ulanovsky e colaboradores, SIL Open Font License 1.1). As duas são baixadas pelo CI no momento da compilação; se a Satoshi não puder ser baixada, a interface fica com a Montserrat.

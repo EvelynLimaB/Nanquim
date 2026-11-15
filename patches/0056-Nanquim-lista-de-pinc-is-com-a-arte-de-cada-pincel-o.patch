@@ -1,30 +1,32 @@
-From 41038417d2b8634e9cd56454c26bef1538318464 Mon Sep 17 00:00:00 2001
+From 5c4b66e851d73ced9c014ff5902481b447e08075 Mon Sep 17 00:00:00 2001
 From: Claude <noreply@anthropic.com>
 Date: Sun, 15 Nov 2026 19:07:36 -0300
 Subject: [PATCH] =?UTF-8?q?Nanquim:=20lista=20de=20pinc=C3=A9is=20com=20a?=
- =?UTF-8?q?=20pr=C3=A9via=20real=20do=20tra=C3=A7o=20e=20categorias=20por?=
- =?UTF-8?q?=20=C3=ADcone?=
+ =?UTF-8?q?=20arte=20de=20cada=20pincel,=20o=20tra=C3=A7o=20real=20e=20cat?=
+ =?UTF-8?q?egorias=20por=20=C3=ADcone?=
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 
-- Cada linha da lista mostra o traço do próprio pincel, renderizado com o
-  motor do Krita (um pincel por vez, em segundo plano) numa placa de papel,
-  com cache em memória e em disco. Enquanto não fica pronto, mostra a amostra
-  desenhada; motores sem prévia usam a miniatura do preset.
+- Cada linha mostra a arte do pincel (a miniatura do preset, a mesma do seletor
+  de presets do Krita) à esquerda, e o traço real dele à direita, renderizado
+  com o motor do Krita numa placa de papel (um pincel por vez, em segundo plano,
+  com cache em memória e em disco). Enquanto o traço não fica pronto, mostra
+  a amostra desenhada.
+- A coluna do modo Clássico também mostra a arte do pincel.
 - KisPresetLivePreviewView ganha previewImage() e o sinal previewReady().
 - As categorias viram abas de ícone de 44 px, com o nome no título da janela.
 
 Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_012fwRUW9SkxqcJFLYxLRXTf
 ---
- libs/ui/NanquimTabletUi.cpp                   | 283 ++++++++++++++++--
+ libs/ui/NanquimTabletUi.cpp                   | 329 ++++++++++++++++--
  .../widgets/kis_preset_live_preview_view.cpp  |   7 +
  .../ui/widgets/kis_preset_live_preview_view.h |  12 +
- 3 files changed, 273 insertions(+), 29 deletions(-)
+ 3 files changed, 315 insertions(+), 33 deletions(-)
 
 diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
-index 02f37b1..f3c021a 100644
+index 02f37b1..622f39e 100644
 --- a/libs/ui/NanquimTabletUi.cpp
 +++ b/libs/ui/NanquimTabletUi.cpp
 @@ -131,6 +131,7 @@
@@ -229,10 +231,50 @@ index 02f37b1..f3c021a 100644
  enum BrushRoles {
      BrushIdRole = Qt::UserRole + 40,
      BrushNameRole,
-@@ -1840,6 +2003,51 @@ void resolveLazyBrush(const QModelIndex &index)
+@@ -1840,6 +2003,86 @@ void resolveLazyBrush(const QModelIndex &index)
                     BrushSubtitleRole);
  }
  
++
++// a arte do pincel (a miniatura que vem dentro do preset), a mesma que o Krita
++// mostra no seletor de presets. Guardada já em quadrado e no dobro do tamanho.
++QImage brushThumb(const KisPaintOpPresetSP &preset)
++{
++    static QHash<int, QImage> s_cache;
++    if (!preset) return QImage();
++    const int id = preset->resourceId();
++    const auto it = s_cache.constFind(id);
++    if (it != s_cache.constEnd()) return it.value();
++    QImage img = preset->image();
++    if (!img.isNull()) {
++        const int side = qMin(img.width(), img.height());
++        img = img.copy((img.width() - side) / 2, (img.height() - side) / 2, side, side)
++                  .scaled(128, 128, Qt::IgnoreAspectRatio, Qt::SmoothTransformation)
++                  .convertToFormat(QImage::Format_ARGB32_Premultiplied);
++    }
++    s_cache.insert(id, img);
++    return img;
++}
++
++void paintBrushThumb(QPainter &g, const QRectF &r, const QModelIndex &index)
++{
++    g.save();
++    g.setRenderHint(QPainter::Antialiasing);
++    g.setRenderHint(QPainter::SmoothPixmapTransform);
++    QPainterPath shape;
++    shape.addRoundedRect(r, 9, 9);
++    g.setClipPath(shape);
++    g.fillPath(shape, QColor(0xce, 0xce, 0xce));   // o cinza dos ícones do Krita
++    const QImage img = brushThumb(presetForId(index.data(BrushIdRole).toInt()));
++    if (!img.isNull()) {
++        g.drawImage(r, img);
++    } else {
++        // preset sem arte: a onda desenhada segura o lugar
++        paintStrokeSample(g, r.adjusted(5, 8, -5, -8), StrokeStyle(index.data(BrushStyleRole).toInt()),
++                          qMax<qreal>(0.12, index.data(BrushWeightRole).toReal()), QColor(0x2b, 0x2d, 0x33));
++    }
++    g.restore();
++}
 +
 +// desenha a imagem preenchendo o retângulo, cortando o que sobra no centro
 +void drawImageCover(QPainter &g, const QRectF &r, const QImage &img)
@@ -268,12 +310,7 @@ index 02f37b1..f3c021a 100644
 +        g.setOpacity(0.28);
 +        paintStrokeSample(g, r.adjusted(8, 4, -8, -4), style, weight, ink);
 +    } else {
-+        const QImage thumb = preset ? preset->image() : QImage();
-+        if (!thumb.isNull()) {
-+            drawImageCover(g, r, thumb);
-+        } else {
-+            paintStrokeSample(g, r.adjusted(8, 4, -8, -4), style, weight, ink);
-+        }
++        paintStrokeSample(g, r.adjusted(8, 4, -8, -4), style, weight, ink);
 +    }
 +    g.restore();
 +}
@@ -281,42 +318,72 @@ index 02f37b1..f3c021a 100644
  // linha da lista (modo Tablet)
  class BrushRowDelegate : public QStyledItemDelegate
  {
-@@ -1865,7 +2073,7 @@ public:
+@@ -1848,7 +2091,7 @@ public:
+     QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &) const override
+     {
+         const QListView *view = qobject_cast<const QListView*>(parent());
+-        return QSize(view ? view->viewport()->width() : 320, 62);
++        return QSize(view ? view->viewport()->width() : 320, 70);
+     }
+     void paint(QPainter *g, const QStyleOptionViewItem &option, const QModelIndex &index) const override
+     {
+@@ -1865,14 +2108,20 @@ public:
              g->setBrush(QColor(38, 38, 44));
              g->drawRoundedRect(card, 10, 10);
          }
 -        const qreal textW = card.width() * 0.48;
-+        const qreal textW = card.width() * 0.42;
++        // arte do pincel à esquerda, nome no meio, traço real e estrela à direita
++        const qreal thumbS = card.height() - 12;
++        paintBrushThumb(*g, QRectF(card.left() + 8, card.center().y() - thumbS / 2, thumbS, thumbS), index);
++        const qreal textL = card.left() + 8 + thumbS + 10;
++        const qreal plateW = qMin<qreal>(108, card.width() * 0.28);
++        const QRectF plate(card.right() - 44 - plateW, card.center().y() - 19, plateW, 38);
++        const qreal textW = plate.left() - 8 - textL;
          QFont nameFont = option.font;
          nameFont.setPixelSize(15);
          nameFont.setWeight(QFont::DemiBold);
-@@ -1881,9 +2089,10 @@ public:
+         QFont subFont = option.font;
+         subFont.setPixelSize(12);
+-        const QRectF nameRect(card.left() + 12, card.top() + 9, textW - 12, 22);
+-        const QRectF subRect(card.left() + 12, card.top() + 31, textW - 12, 18);
++        const QRectF nameRect(textL, card.top() + 12, textW, 22);
++        const QRectF subRect(textL, card.top() + 34, textW, 18);
+         g->setFont(nameFont);
+         g->setPen(QColor(236, 236, 241));
+         g->drawText(nameRect, Qt::AlignLeft | Qt::AlignVCenter,
+@@ -1881,9 +2130,7 @@ public:
          g->setPen(QColor(138, 138, 150));
          g->drawText(subRect, Qt::AlignLeft | Qt::AlignVCenter,
                      QFontMetrics(subFont).elidedText(index.data(BrushSubtitleRole).toString(), Qt::ElideRight, int(subRect.width())));
 -        const QRectF sample(card.left() + textW + 6, card.top() + 12, card.width() - textW - 52, card.height() - 24);
 -        paintStrokeSample(*g, sample, StrokeStyle(index.data(BrushStyleRole).toInt()),
 -                          qMax<qreal>(0.12, index.data(BrushWeightRole).toReal()));
-+        const qreal sampleH = card.height() - 14;
-+        const qreal sampleW = qMin(card.width() - textW - 6 - 44, sampleH * 4.4);
-+        const QRectF sample(card.right() - 44 - sampleW, card.top() + 7, sampleW, sampleH);
-+        paintBrushSample(*g, sample, index);
++        paintBrushSample(*g, plate, index);
          // estrela: toca para pôr ou tirar dos favoritos
          const bool fav = index.data(BrushFavoriteRole).toBool();
          const QPointF c(card.right() - 20, card.center().y());
-@@ -1937,9 +2146,8 @@ public:
+@@ -1908,7 +2155,7 @@ public:
+     QSize sizeHint(const QStyleOptionViewItem &, const QModelIndex &) const override
+     {
+         const QListView *view = qobject_cast<const QListView*>(parent());
+-        return QSize(qMax(64, view ? view->viewport()->width() : 76), 74);
++        return QSize(qMax(64, view ? view->viewport()->width() : 76), 84);
+     }
+     void paint(QPainter *g, const QStyleOptionViewItem &option, const QModelIndex &index) const override
+     {
+@@ -1937,9 +2184,8 @@ public:
          g->setPen(QPen(current ? QColor(61, 139, 255) : QColor(44, 44, 51), current ? 1.4 : 1.0));
          g->setBrush(current ? QColor(30, 42, 68) : QColor(32, 32, 37));
          g->drawRoundedRect(tile.adjusted(0.5, 0.5, -0.5, -0.5), 9, 9);
 -        const QRectF sample(tile.left() + 8, tile.top() + 8, tile.width() - 16, tile.height() * 0.42);
 -        paintStrokeSample(*g, sample, StrokeStyle(index.data(BrushStyleRole).toInt()),
 -                          qMax<qreal>(0.12, index.data(BrushWeightRole).toReal()));
-+        const QRectF sample(tile.left() + 7, tile.top() + 7, tile.width() - 14, tile.height() * 0.46);
-+        paintBrushSample(*g, sample, index);
++        const qreal thumbS = qMin(tile.width() - 14, tile.height() - 30);
++        paintBrushThumb(*g, QRectF(tile.center().x() - thumbS / 2, tile.top() + 6, thumbS, thumbS), index);
          QFont f = option.font;
          f.setPixelSize(11);
          g->setFont(f);
-@@ -2007,6 +2215,7 @@ QListView *makeBrushList(QWidget *parent, bool tiles)
+@@ -2007,6 +2253,7 @@ QListView *makeBrushList(QWidget *parent, bool tiles)
      list->setResizeMode(QListView::Adjust);
      list->viewport()->setAutoFillBackground(false);
      list->setStyleSheet(QStringLiteral("QListView { background: transparent; border: none; }"));
@@ -324,7 +391,7 @@ index 02f37b1..f3c021a 100644
      KisKineticScroller::createPreconfiguredScroller(list);
      return list;
  }
-@@ -2111,6 +2320,10 @@ const char *BRUSH_PANEL_STYLE =
+@@ -2111,6 +2358,10 @@ const char *BRUSH_PANEL_STYLE =
      "  font-size: 13px; font-weight: 600; padding: 6px 14px; min-height: 18px; }"
      "QPushButton.nanquimChip:checked { color: #0b1220; border: none;"
      "  background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #3d8bff, stop:1 #22d3ee); }"
@@ -335,7 +402,7 @@ index 02f37b1..f3c021a 100644
      "QPushButton.nanquimBrushAction { color: #eceef2; background: #1b1e23; border: 1px solid #2a2e35; border-radius: 12px;"
      "  font-size: 14px; font-weight: 600; padding: 12px 10px; }"
      "QPushButton.nanquimBrushAction:pressed { background: #2a2e35; border-color: #3d8bff; }";
-@@ -2164,33 +2377,43 @@ void buildBrushPanel(KisMainWindow *mw)
+@@ -2164,33 +2415,43 @@ void buildBrushPanel(KisMainWindow *mw)
      head->addWidget(add);
      root->addLayout(head);
  
@@ -398,7 +465,7 @@ index 02f37b1..f3c021a 100644
      root->addWidget(list, 1);
  
      QLabel *empty = new QLabel(panel);
-@@ -2213,9 +2436,10 @@ void buildBrushPanel(KisMainWindow *mw)
+@@ -2213,9 +2474,10 @@ void buildBrushPanel(KisMainWindow *mw)
      }
      root->addLayout(actions);
  
@@ -410,7 +477,7 @@ index 02f37b1..f3c021a 100644
          QVector<BrushItem> items;
          refreshFavoriteIds();
          if (cat == BRUSH_IMPORTED) items = importedBrushItems();
-@@ -2401,6 +2625,7 @@ QDockWidget *buildBrushDock(KisMainWindow *mw)
+@@ -2401,6 +2663,7 @@ QDockWidget *buildBrushDock(KisMainWindow *mw)
      card->setObjectName(QStringLiteral("nanquimBrushColumnCard"));
      QVBoxLayout *inner = new QVBoxLayout(card);
      inner->setContentsMargins(2, 6, 2, 6);

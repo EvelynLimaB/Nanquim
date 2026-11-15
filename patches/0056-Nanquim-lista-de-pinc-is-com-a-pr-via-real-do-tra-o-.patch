@@ -1,0 +1,478 @@
+From 41038417d2b8634e9cd56454c26bef1538318464 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Sun, 15 Nov 2026 19:07:36 -0300
+Subject: [PATCH] =?UTF-8?q?Nanquim:=20lista=20de=20pinc=C3=A9is=20com=20a?=
+ =?UTF-8?q?=20pr=C3=A9via=20real=20do=20tra=C3=A7o=20e=20categorias=20por?=
+ =?UTF-8?q?=20=C3=ADcone?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- Cada linha da lista mostra o traço do próprio pincel, renderizado com o
+  motor do Krita (um pincel por vez, em segundo plano) numa placa de papel,
+  com cache em memória e em disco. Enquanto não fica pronto, mostra a amostra
+  desenhada; motores sem prévia usam a miniatura do preset.
+- KisPresetLivePreviewView ganha previewImage() e o sinal previewReady().
+- As categorias viram abas de ícone de 44 px, com o nome no título da janela.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_012fwRUW9SkxqcJFLYxLRXTf
+---
+ libs/ui/NanquimTabletUi.cpp                   | 283 ++++++++++++++++--
+ .../widgets/kis_preset_live_preview_view.cpp  |   7 +
+ .../ui/widgets/kis_preset_live_preview_view.h |  12 +
+ 3 files changed, 273 insertions(+), 29 deletions(-)
+
+diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
+index 02f37b1..f3c021a 100644
+--- a/libs/ui/NanquimTabletUi.cpp
++++ b/libs/ui/NanquimTabletUi.cpp
+@@ -131,6 +131,7 @@
+ #include <KisTagModel.h>
+ #include <KisResourceTypes.h>
+ #include <kis_paintop_preset.h>
++#include "widgets/kis_preset_live_preview_view.h"
+ #include <QDialog>
+ #include "KisRecentDocumentsModelWrapper.h"
+ #include <KisKineticScroller.h>
+@@ -240,6 +241,11 @@ const char *SEARCH = "<circle cx='11' cy='11' r='6.5'/><path d='M16 16l4 4'/>";
+ const char *FOLDER = "<path d='M3.5 7.5a2 2 0 0 1 2-2h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z'/>";
+ const char *BOOK = "<path d='M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z'/><path d='M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z'/>";
+ const char *RETURN = "<path d='M9 6l-5 6 5 6'/><path d='M4 12h11a5 5 0 0 1 5 5'/>";
++const char *NIB = "<path d='M12 3l6 10-6 8-6-8z'/><path d='M12 3v9'/><circle cx='12' cy='13.5' r='1.4'/>";
++const char *BRUSH = "<path d='M5 19c0-2.5 1.5-3.5 3.5-3.5l9-9 2 2-9 9c0 2-1.5 3-3.5 3-1 0-2-.5-2-1.5z'/>";
++const char *STAR = "<path d='M12 3l2.6 6 6.4.5-4.9 4.3 1.5 6.2L12 16.6 6.4 20l1.5-6.2L3 9.5 9.4 9z'/>";
++const char *LIST = "<path d='M5 7h14M5 12h14M5 17h14'/>";
++const char *IMPORT = "<path d='M12 4v11M7.5 10.5L12 15l4.5-4.5'/><path d='M5 18v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1'/>";
+ const char *ALL_TOOLS = "<circle cx='6' cy='6' r='1.6'/><circle cx='12' cy='6' r='1.6'/><circle cx='18' cy='6' r='1.6'/><circle cx='6' cy='12' r='1.6'/><circle cx='12' cy='12' r='1.6'/><circle cx='18' cy='12' r='1.6'/><circle cx='6' cy='18' r='1.6'/><circle cx='12' cy='18' r='1.6'/><circle cx='18' cy='18' r='1.6'/>";
+ }
+ 
+@@ -1640,7 +1646,8 @@ QVector<BrushItem> allBrushItems()
+ }
+ 
+ // traço de amostra, desenhado na hora (sem renderizar o pincel de verdade)
+-void paintStrokeSample(QPainter &g, const QRectF &r, StrokeStyle style, qreal weight)
++void paintStrokeSample(QPainter &g, const QRectF &r, StrokeStyle style, qreal weight,
++                       const QColor &inkColor = QColor(236, 236, 241))
+ {
+     g.save();
+     g.setRenderHint(QPainter::Antialiasing);
+@@ -1656,7 +1663,7 @@ void paintStrokeSample(QPainter &g, const QRectF &r, StrokeStyle style, qreal we
+         return len > 0 ? QPointF(-d.y() / len, d.x() / len) : QPointF(0, 1);
+     };
+     const qreal maxW = qMax<qreal>(1.4, r.height() * (0.06 + 0.34 * weight));
+-    QColor ink(236, 236, 241);
++    QColor ink = inkColor;
+ 
+     auto taperedPath = [&](qreal widthScale, qreal minPart, qreal offset) {
+         QPolygonF left, right;
+@@ -1750,6 +1757,162 @@ void paintStrokeSample(QPainter &g, const QRectF &r, StrokeStyle style, qreal we
+     g.restore();
+ }
+ 
++
++// ---------------------------------------------------------------------------
++// Prévia real do traço de cada pincel, a mesma do editor de pincéis do Krita.
++// Um renderizador escondido faz um pincel por vez (o motor é assíncrono) e
++// guarda o resultado na memória e em disco. Enquanto o traço não fica pronto a
++// linha mostra a amostra desenhada; pincéis que o motor não consegue prever
++// usam a miniatura que vem dentro do próprio preset.
++// ---------------------------------------------------------------------------
++class BrushPreviewer : public QObject
++{
++public:
++    enum State { Ready, Pending, Unsupported };
++    static const int RENDER_W = 400;
++    static const int RENDER_H = 96;
++
++    static BrushPreviewer *instance(KisMainWindow *mw = nullptr)
++    {
++        static QPointer<BrushPreviewer> s_instance;
++        if (!s_instance && mw) s_instance = new BrushPreviewer(mw);
++        return s_instance;
++    }
++
++    // listas que precisam ser repintadas quando um traço fica pronto
++    void watch(QWidget *w) { m_watchers << QPointer<QWidget>(w); }
++
++    State request(const KisPaintOpPresetSP &preset, QImage *out)
++    {
++        if (!preset || !preset->settings()) return Unsupported;
++        const int id = preset->resourceId();
++        const auto it = m_images.constFind(id);
++        if (it != m_images.constEnd()) {
++            if (it.value().isNull()) return Unsupported;
++            *out = it.value();
++            return Ready;
++        }
++        if (m_queued.contains(id)) return Pending;
++        const QString engine = preset->paintOp().id();
++        if (engine == QLatin1String("roundmarker") || engine == QLatin1String("experimentbrush")
++                || engine == QLatin1String("duplicate")) {
++            m_images.insert(id, QImage());
++            return Unsupported;
++        }
++        const QString file = cacheFile(preset);
++        QImage cached;
++        if (!file.isEmpty() && cached.load(file)) {
++            m_images.insert(id, cached);
++            *out = cached;
++            return Ready;
++        }
++        m_queued.insert(id);
++        m_queue.prepend(id);   // o que acabou de aparecer na tela vai primeiro
++        QTimer::singleShot(0, this, [this]() { pump(); });
++        return Pending;
++    }
++
++private:
++    explicit BrushPreviewer(KisMainWindow *mw)
++        : QObject(mw)
++        , m_mw(mw)
++    {
++        m_timeout.setSingleShot(true);
++        m_timeout.setInterval(4000);
++        QObject::connect(&m_timeout, &QTimer::timeout, this, [this]() {
++            if (m_busy) finish(m_current, QImage());   // não veio: fica com a amostra desenhada
++        });
++    }
++
++    static QString cacheDir()
++    {
++        return QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QStringLiteral("/brushpreview");
++    }
++
++    static QString cacheFile(const KisPaintOpPresetSP &preset)
++    {
++        const QString md5 = preset->md5Sum();
++        if (md5.isEmpty()) return QString();
++        return cacheDir() + QStringLiteral("/v1-") + md5 + QStringLiteral(".png");
++    }
++
++    bool ensureView()
++    {
++        if (m_view) return true;
++        if (!m_mw) return false;
++        KoCanvasResourceProvider *r = resources(m_mw);
++        if (!r) return false;
++        m_view = new KisPresetLivePreviewView(m_mw);
++        m_view->setFixedSize(RENDER_W, RENDER_H);
++        m_view->hide();
++        // papel claro e tinta escura: o traço aparece como ficaria na página
++        QPalette pal = m_view->palette();
++        pal.setColor(QPalette::Window, QColor(0xfa, 0xfa, 0xf7));
++        pal.setColor(QPalette::Text, QColor(0x1b, 0x1d, 0x22));
++        m_view->setPalette(pal);
++        m_view->setup(r);
++        QObject::connect(m_view, &KisPresetLivePreviewView::previewReady, this, [this]() { onReady(); });
++        return true;
++    }
++
++    void pump()
++    {
++        if (m_busy || m_queue.isEmpty()) return;
++        if (!ensureView()) {
++            QTimer::singleShot(500, this, [this]() { pump(); });
++            return;
++        }
++        const int id = m_queue.takeFirst();
++        KisPaintOpPresetSP preset = presetForId(id);
++        if (!preset || !preset->settings()) {
++            finish(id, QImage());
++            return;
++        }
++        m_busy = true;
++        m_current = id;
++        m_timeout.start();
++        m_view->setCurrentPreset(preset);
++        m_view->requestUpdateStroke();
++    }
++
++    void onReady()
++    {
++        if (!m_busy) return;
++        const QImage img = m_view->previewImage();
++        finish(m_current, img.isNull() ? QImage() : img.convertToFormat(QImage::Format_RGB32));
++    }
++
++    void finish(int id, const QImage &img)
++    {
++        m_timeout.stop();
++        m_busy = false;
++        m_queued.remove(id);
++        m_images.insert(id, img);
++        if (!img.isNull()) {
++            KisPaintOpPresetSP preset = presetForId(id);
++            const QString file = preset ? cacheFile(preset) : QString();
++            if (!file.isEmpty()) {
++                QDir().mkpath(cacheDir());
++                img.save(file, "PNG");
++            }
++        }
++        for (const QPointer<QWidget> &w : m_watchers) {
++            if (w) w->update();
++        }
++        QTimer::singleShot(0, this, [this]() { pump(); });
++    }
++
++    QPointer<KisMainWindow> m_mw;
++    QPointer<KisPresetLivePreviewView> m_view;
++    QHash<int, QImage> m_images;      // imagem nula = sem prévia para esse motor
++    QSet<int> m_queued;
++    QList<int> m_queue;
++    QList<QPointer<QWidget>> m_watchers;
++    QTimer m_timeout;
++    bool m_busy = false;
++    int m_current = -1;
++};
++
+ enum BrushRoles {
+     BrushIdRole = Qt::UserRole + 40,
+     BrushNameRole,
+@@ -1840,6 +2003,51 @@ void resolveLazyBrush(const QModelIndex &index)
+                    BrushSubtitleRole);
+ }
+ 
++
++// desenha a imagem preenchendo o retângulo, cortando o que sobra no centro
++void drawImageCover(QPainter &g, const QRectF &r, const QImage &img)
++{
++    if (img.isNull() || r.isEmpty()) return;
++    const qreal scale = qMax(r.width() / img.width(), r.height() / img.height());
++    const qreal w = r.width() / scale;
++    const qreal h = r.height() / scale;
++    g.drawImage(r, img, QRectF((img.width() - w) / 2.0, (img.height() - h) / 2.0, w, h));
++}
++
++// amostra do pincel numa placa de papel: o traço aparece como ficaria na página
++void paintBrushSample(QPainter &g, const QRectF &r, const QModelIndex &index)
++{
++    g.save();
++    g.setRenderHint(QPainter::Antialiasing);
++    g.setRenderHint(QPainter::SmoothPixmapTransform);
++    QPainterPath plate;
++    plate.addRoundedRect(r, 8, 8);
++    g.setClipPath(plate);
++    g.fillPath(plate, QColor(0xfa, 0xfa, 0xf7));
++    const QColor ink(0x1b, 0x1d, 0x22);
++    const StrokeStyle style = StrokeStyle(index.data(BrushStyleRole).toInt());
++    const qreal weight = qMax<qreal>(0.12, index.data(BrushWeightRole).toReal());
++    KisPaintOpPresetSP preset = presetForId(index.data(BrushIdRole).toInt());
++    QImage img;
++    BrushPreviewer *previewer = BrushPreviewer::instance();
++    const BrushPreviewer::State state = previewer ? previewer->request(preset, &img) : BrushPreviewer::Unsupported;
++    if (state == BrushPreviewer::Ready) {
++        drawImageCover(g, r, img);
++    } else if (state == BrushPreviewer::Pending) {
++        // o traço real ainda está sendo feito: a amostra desenhada segura o lugar
++        g.setOpacity(0.28);
++        paintStrokeSample(g, r.adjusted(8, 4, -8, -4), style, weight, ink);
++    } else {
++        const QImage thumb = preset ? preset->image() : QImage();
++        if (!thumb.isNull()) {
++            drawImageCover(g, r, thumb);
++        } else {
++            paintStrokeSample(g, r.adjusted(8, 4, -8, -4), style, weight, ink);
++        }
++    }
++    g.restore();
++}
++
+ // linha da lista (modo Tablet)
+ class BrushRowDelegate : public QStyledItemDelegate
+ {
+@@ -1865,7 +2073,7 @@ public:
+             g->setBrush(QColor(38, 38, 44));
+             g->drawRoundedRect(card, 10, 10);
+         }
+-        const qreal textW = card.width() * 0.48;
++        const qreal textW = card.width() * 0.42;
+         QFont nameFont = option.font;
+         nameFont.setPixelSize(15);
+         nameFont.setWeight(QFont::DemiBold);
+@@ -1881,9 +2089,10 @@ public:
+         g->setPen(QColor(138, 138, 150));
+         g->drawText(subRect, Qt::AlignLeft | Qt::AlignVCenter,
+                     QFontMetrics(subFont).elidedText(index.data(BrushSubtitleRole).toString(), Qt::ElideRight, int(subRect.width())));
+-        const QRectF sample(card.left() + textW + 6, card.top() + 12, card.width() - textW - 52, card.height() - 24);
+-        paintStrokeSample(*g, sample, StrokeStyle(index.data(BrushStyleRole).toInt()),
+-                          qMax<qreal>(0.12, index.data(BrushWeightRole).toReal()));
++        const qreal sampleH = card.height() - 14;
++        const qreal sampleW = qMin(card.width() - textW - 6 - 44, sampleH * 4.4);
++        const QRectF sample(card.right() - 44 - sampleW, card.top() + 7, sampleW, sampleH);
++        paintBrushSample(*g, sample, index);
+         // estrela: toca para pôr ou tirar dos favoritos
+         const bool fav = index.data(BrushFavoriteRole).toBool();
+         const QPointF c(card.right() - 20, card.center().y());
+@@ -1937,9 +2146,8 @@ public:
+         g->setPen(QPen(current ? QColor(61, 139, 255) : QColor(44, 44, 51), current ? 1.4 : 1.0));
+         g->setBrush(current ? QColor(30, 42, 68) : QColor(32, 32, 37));
+         g->drawRoundedRect(tile.adjusted(0.5, 0.5, -0.5, -0.5), 9, 9);
+-        const QRectF sample(tile.left() + 8, tile.top() + 8, tile.width() - 16, tile.height() * 0.42);
+-        paintStrokeSample(*g, sample, StrokeStyle(index.data(BrushStyleRole).toInt()),
+-                          qMax<qreal>(0.12, index.data(BrushWeightRole).toReal()));
++        const QRectF sample(tile.left() + 7, tile.top() + 7, tile.width() - 14, tile.height() * 0.46);
++        paintBrushSample(*g, sample, index);
+         QFont f = option.font;
+         f.setPixelSize(11);
+         g->setFont(f);
+@@ -2007,6 +2215,7 @@ QListView *makeBrushList(QWidget *parent, bool tiles)
+     list->setResizeMode(QListView::Adjust);
+     list->viewport()->setAutoFillBackground(false);
+     list->setStyleSheet(QStringLiteral("QListView { background: transparent; border: none; }"));
++    if (BrushPreviewer *previewer = BrushPreviewer::instance()) previewer->watch(list->viewport());
+     KisKineticScroller::createPreconfiguredScroller(list);
+     return list;
+ }
+@@ -2111,6 +2320,10 @@ const char *BRUSH_PANEL_STYLE =
+     "  font-size: 13px; font-weight: 600; padding: 6px 14px; min-height: 18px; }"
+     "QPushButton.nanquimChip:checked { color: #0b1220; border: none;"
+     "  background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #3d8bff, stop:1 #22d3ee); }"
++    "QPushButton.nanquimTab { background: #1b1e23; border: 1px solid #2a2e35; border-radius: 12px; padding: 0px; }"
++    "QPushButton.nanquimTab:checked { border: none;"
++    "  background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #3d8bff, stop:1 #22d3ee); }"
++    "QPushButton.nanquimTab:pressed { background: #2a2e35; }"
+     "QPushButton.nanquimBrushAction { color: #eceef2; background: #1b1e23; border: 1px solid #2a2e35; border-radius: 12px;"
+     "  font-size: 14px; font-weight: 600; padding: 12px 10px; }"
+     "QPushButton.nanquimBrushAction:pressed { background: #2a2e35; border-color: #3d8bff; }";
+@@ -2164,33 +2377,43 @@ void buildBrushPanel(KisMainWindow *mw)
+     head->addWidget(add);
+     root->addLayout(head);
+ 
++    BrushPreviewer::instance(mw);
+     QListView *list = makeBrushList(panel, false);
+     QStandardItemModel *model = static_cast<QStandardItemModel*>(list->model());
+ 
+-    const QStringList chips = {QStringLiteral("Tinta"), QStringLiteral("Lápis"), QStringLiteral("Pintura"),
+-                               QStringLiteral("Retícula"), BRUSH_FAVORITES, BRUSH_IMPORTED, BRUSH_ALL};
++    // categorias por ícone: o nome aparece no título da janela
++    struct Tab { QString category; const char *icon; };
++    const QVector<Tab> tabs = {
++        {QStringLiteral("Tinta"), Svg::NIB}, {QStringLiteral("Lápis"), Svg::PEN},
++        {QStringLiteral("Pintura"), Svg::BRUSH}, {QStringLiteral("Retícula"), Svg::ALL_TOOLS},
++        {BRUSH_FAVORITES, Svg::STAR}, {BRUSH_IMPORTED, Svg::IMPORT}, {BRUSH_ALL, Svg::LIST}};
+     QButtonGroup *group = new QButtonGroup(panel);
+     group->setExclusive(true);
+-    QHBoxLayout *row1 = new QHBoxLayout();
+-    QHBoxLayout *row2 = new QHBoxLayout();
+-    row1->setSpacing(8);
+-    row2->setSpacing(8);
++    QHBoxLayout *tabRow = new QHBoxLayout();
++    tabRow->setSpacing(6);
+     const QString saved = KSharedConfig::openConfig()->group("Nanquim").readEntry("brushCategory", QStringLiteral("Tinta"));
+-    for (int i = 0; i < chips.size(); ++i) {
+-        QPushButton *chip = new QPushButton(chips[i], panel);
+-        chip->setProperty("class", QStringLiteral("nanquimChip"));
+-        chip->setCheckable(true);
+-        chip->setFocusPolicy(Qt::NoFocus);
+-        chip->setProperty("nanquimCategory", chips[i]);
+-        chip->setChecked(chips[i] == saved);
+-        group->addButton(chip, i);
+-        (i < 4 ? row1 : row2)->addWidget(chip);
++    for (int i = 0; i < tabs.size(); ++i) {
++        QPushButton *tab = new QPushButton(panel);
++        tab->setProperty("class", QStringLiteral("nanquimTab"));
++        tab->setFixedSize(44, 44);
++        tab->setIconSize(QSize(22, 22));
++        const QString body = QString::fromUtf8(tabs[i].icon);
++        QIcon icon;
++        icon.addPixmap(svgPixmap(body, C_TEXT, 22), QIcon::Normal, QIcon::Off);
++        icon.addPixmap(svgPixmap(body, QColor(0x0b, 0x12, 0x20), 22), QIcon::Normal, QIcon::On);
++        tab->setIcon(icon);
++        tab->setCheckable(true);
++        tab->setFocusPolicy(Qt::NoFocus);
++        tab->setToolTip(tabs[i].category);
++        tab->setAccessibleName(tabs[i].category);
++        tab->setProperty("nanquimCategory", tabs[i].category);
++        tab->setChecked(tabs[i].category == saved);
++        group->addButton(tab, i);
++        tabRow->addWidget(tab);
+     }
+     if (!group->checkedButton()) group->button(0)->setChecked(true);
+-    row1->addStretch(1);
+-    row2->addStretch(1);
+-    root->addLayout(row1);
+-    root->addLayout(row2);
++    tabRow->addStretch(1);
++    root->addLayout(tabRow);
+     root->addWidget(list, 1);
+ 
+     QLabel *empty = new QLabel(panel);
+@@ -2213,9 +2436,10 @@ void buildBrushPanel(KisMainWindow *mw)
+     }
+     root->addLayout(actions);
+ 
+-    auto reload = [group, model, list, empty]() {
++    auto reload = [group, model, list, empty, title]() {
+         QAbstractButton *chip = group->checkedButton();
+         const QString cat = chip ? chip->property("nanquimCategory").toString() : QStringLiteral("Tinta");
++        title->setText(i18n("PINCÉIS") + QStringLiteral(" · ") + cat.toUpper());
+         QVector<BrushItem> items;
+         refreshFavoriteIds();
+         if (cat == BRUSH_IMPORTED) items = importedBrushItems();
+@@ -2401,6 +2625,7 @@ QDockWidget *buildBrushDock(KisMainWindow *mw)
+     card->setObjectName(QStringLiteral("nanquimBrushColumnCard"));
+     QVBoxLayout *inner = new QVBoxLayout(card);
+     inner->setContentsMargins(2, 6, 2, 6);
++    BrushPreviewer::instance(mw);
+     QListView *list = makeBrushList(card, true);
+     inner->addWidget(list);
+     outer->addWidget(card);
+diff --git a/libs/ui/widgets/kis_preset_live_preview_view.cpp b/libs/ui/widgets/kis_preset_live_preview_view.cpp
+index 5fb4527..1bf4cac 100644
+--- a/libs/ui/widgets/kis_preset_live_preview_view.cpp
++++ b/libs/ui/widgets/kis_preset_live_preview_view.cpp
+@@ -106,6 +106,13 @@ void KisPresetLivePreviewView::slotPreviewGenerationCompleted()
+     } else {
+         m_sceneImageItem->setPixmap(QPixmap::fromImage(m_temp_image));
+     }
++    m_lastPreview = m_temp_image;
++    Q_EMIT previewReady();
++}
++
++QImage KisPresetLivePreviewView::previewImage() const
++{
++    return m_lastPreview;
+ }
+ 
+ void KisPresetLivePreviewView::paintBackground()
+diff --git a/libs/ui/widgets/kis_preset_live_preview_view.h b/libs/ui/widgets/kis_preset_live_preview_view.h
+index 1d92b87..f39f3b0 100644
+--- a/libs/ui/widgets/kis_preset_live_preview_view.h
++++ b/libs/ui/widgets/kis_preset_live_preview_view.h
+@@ -8,6 +8,7 @@
+ #define _KIS_PRESET_LIVE_PREVIEW_
+ 
+ #include <QGraphicsScene>
++#include <QImage>
+ #include <QGraphicsView>
+ #include <QPainterPath>
+ #include <QGraphicsPixmapItem>
+@@ -57,6 +58,16 @@ public:
+     void setCurrentPreset(KisPaintOpPresetSP preset);
+     void requestUpdateStroke();
+ 
++    /**
++     * @brief the last finished stroke exactly as painted (background included).
++     * Used by the Nanquim brush list to show a real preview of every brush.
++     */
++    QImage previewImage() const;
++
++Q_SIGNALS:
++    /// emitted every time a stroke preview has finished rendering
++    void previewReady();
++
+ private Q_SLOTS:
+     void updateStroke();
+     void slotPreviewGenerationCompleted();
+@@ -114,6 +125,7 @@ private:
+     float m_currentBrushSize {1.0};
+ 
+     bool m_previewGenerationInProgress {false};
++    QImage m_lastPreview;
+     KisSignalCompressor m_updateCompressor;
+ 
+     /// the range of brush sizes that will control zooming in/out
+-- 
+2.43.0
+

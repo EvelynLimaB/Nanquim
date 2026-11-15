@@ -34,6 +34,7 @@
 | Design novo, etapa 7 · peça 3: painéis sobrepostos com alfinete, popover de cor, ajustes do pincel fixados com prévia, faixas de largura | Em teste | 0053 |
 | Design novo, etapa 7 · peça 4: roda de atalhos (camadas, matiz e triângulo de cor) no botão da S Pen e no toque longo da cor | Em teste | 0054 |
 | Ícone Bico-gota (app, abertura, galeria) e marca NANQUIM em Chillax Bold | Em teste | 0055 |
+| Lista de pincéis com a prévia real do traço (render do motor em cache, miniatura do preset como reserva) e categorias por ícone | Em teste | 0056 |
 | Versão para Windows (usa o modo Clássico por padrão) | Ideia | — |
 
 ## Importador `.sut`

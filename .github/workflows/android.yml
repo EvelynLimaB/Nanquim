@@ -77,7 +77,9 @@ jobs:
           git config user.name "Nanquim CI"
           git config user.email "ci@nanquim.invalid"
           shopt -s nullglob
-          for p in ../nanquim/patches/*.patch; do
+          # ordem numérica: 0056 → 0056.5 → 0057
+          mapfile -t PATCHES < <(printf '%s\n' ../nanquim/patches/*.patch | LC_ALL=C sort -V)
+          for p in "${PATCHES[@]}"; do
             echo "## Aplicando $p"
             git am --3way "$p"
           done

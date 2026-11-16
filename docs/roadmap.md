@@ -35,6 +35,13 @@
 | Design novo, etapa 7 · peça 4: roda de atalhos (camadas, matiz e triângulo de cor) no botão da S Pen e no toque longo da cor | Em teste | 0054 |
 | Ícone Bico-gota (app, abertura, galeria) e marca NANQUIM em Chillax Bold | Em teste | 0055 |
 | Lista de pincéis com a arte de cada pincel (como no Krita) e categorias por ícone | Em teste | 0056 |
+| Cores rápidas (3 mais usadas) e salvamento mais rápido no Android | Em teste | 0056.5 |
+| Build 60: painéis em pop-up preso ao botão, toque fora só fecha | Em teste | 0057 |
+| Build 60: pairar da S Pen (ícone cresce, fundo e nome) | Em teste | 0058 |
+| Build 60: modo foco com Pincel, Borracha e Lata de tinta | Em teste | 0059 |
+| Build 60: ajustes do pincel e estabilizador em pop-up, com teste ao vivo | Em teste | 0060 |
+| Build 60: roda de atalhos com pincéis (borracha, favoritos e recentes) | Em teste | 0061 |
+| Build 60: tela inicial, redesenho 3 | Em teste | 0062 |
 | Versão para Windows (usa o modo Clássico por padrão) | Ideia | — |
 
 ## Importador `.sut`

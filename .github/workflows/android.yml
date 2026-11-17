@@ -182,8 +182,13 @@ jobs:
             echo "deb [signed-by=/usr/share/keyrings/toolchain-r.gpg] https://ppa.launchpadcontent.net/ubuntu-toolchain-r/test/ubuntu jammy main" \
               | sudo tee /etc/apt/sources.list.d/toolchain-r.list
           fi
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq libstdc++6 ccache ninja-build gettext python3-venv patchelf > /dev/null
+          # o PPA às vezes responde 503: tenta de novo algumas vezes antes de desistir
+          for n in 1 2 3 4 5 6; do
+            sudo apt-get update -qq || true
+            if sudo apt-get install -y -qq -o Acquire::Retries=3 libstdc++6 ccache ninja-build gettext python3-venv patchelf > /dev/null; then break; fi
+            [ "$n" = 6 ] && exit 1
+            echo "apt-get install falhou (tentativa $n), esperando $((n * 20)) s"; sleep $((n * 20))
+          done
           strings /lib/x86_64-linux-gnu/libstdc++.so.6 | grep -E '^GLIBCXX_3\.4\.3[0-9]' | tail -1
           cmake --version | head -1; python3 --version; java -version 2>&1 | head -1
 

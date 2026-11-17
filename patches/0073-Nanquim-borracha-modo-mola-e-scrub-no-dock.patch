@@ -1,8 +1,8 @@
-From 5f8a12e49b00112233445566778899aabbcc0073 Mon Sep 17 00:00:00 2001
+From f6cf78c01d6966d86fa6eeefe41ed2a3879f7cd4 Mon Sep 17 00:00:00 2001
 From: Nanquim <nanquim@users.noreply.github.com>
-Date: Tue, 17 Nov 2026 23:00:00 -0300
-Subject: [PATCH] Nanquim: borracha em modo mola e scrub de historico no dock
- do polegar
+Date: Tue, 17 Nov 2026 20:47:14 -0300
+Subject: [PATCH 72/72] Nanquim: borracha em modo mola e scrub de historico no
+ dock  do polegar
 
 - Botao de borracha no dock do polegar: segurar (>200 ms) ativa enquanto
   pressionado e retorna ao pincel automaticamente ao soltar; toque curto
@@ -10,10 +10,14 @@ Subject: [PATCH] Nanquim: borracha em modo mola e scrub de historico no dock
 - Deslizar o polegar na horizontal sobre Desfazer/Refazer varre varios passos
   do historico continuamente
 ---
+ libs/ui/NanquimTabletUi.cpp | 56 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 55 insertions(+), 1 deletion(-)
+
 diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
+index bc0a15d..c08e40c 100644
 --- a/libs/ui/NanquimTabletUi.cpp
 +++ b/libs/ui/NanquimTabletUi.cpp
-@@ -4663,8 +4663,38 @@
+@@ -4567,8 +4567,38 @@ void buildThumbDock(KisMainWindow *mw)
      });
      l->addWidget(navigate);
  
@@ -53,7 +57,7 @@ diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
      for (const UndoEntry &entry : entries) {
          QAction *a = act(mw, entry.action);
          QToolButton *b = makeButton(i18n(entry.tip), entry.svg, false);
-@@ -4675,6 +4705,30 @@
+@@ -4579,6 +4609,30 @@ void buildThumbDock(KisMainWindow *mw)
          } else {
              b->setEnabled(false);
          }
@@ -86,3 +90,4 @@ diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
      dock->adjustSize();
 -- 
 2.43.0
+

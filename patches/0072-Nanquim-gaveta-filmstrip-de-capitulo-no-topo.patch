@@ -1,20 +1,20 @@
-From 7e1b99a23f00c88d112233445566778899000072 Mon Sep 17 00:00:00 2001
+From d5d230c5209d2eb1cbf50c9b01f1d4ff4f673c3b Mon Sep 17 00:00:00 2001
 From: Nanquim <nanquim@users.noreply.github.com>
-Date: Tue, 17 Nov 2026 22:45:00 -0300
-Subject: [PATCH] Nanquim: gaveta filmstrip de capitulo na barra do topo
+Date: Tue, 17 Nov 2026 20:45:15 -0300
+Subject: [PATCH 71/72] Nanquim: gaveta filmstrip de capitulo na barra do topo
 
 - Tocar no titulo do desenho abre uma gaveta horizontal com todas as paginas
   do capitulo ativo (ou desenhos recentes se a pagina for solta)
 - Permite alternar de pagina com um toque sem voltar a galeria
 ---
- libs/ui/NanquimTabletUi.cpp | 119 +++++++++++++++++++++++++++++++++++-
- 1 file changed, 117 insertions(+), 2 deletions(-)
+ libs/ui/NanquimTabletUi.cpp | 120 +++++++++++++++++++++++++++++++++++-
+ 1 file changed, 118 insertions(+), 2 deletions(-)
 
 diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
-index f94e812b33..c318a902ef 100644
+index a308245..bc0a15d 100644
 --- a/libs/ui/NanquimTabletUi.cpp
 +++ b/libs/ui/NanquimTabletUi.cpp
-@@ -3211,6 +3211,115 @@ class BrushPanelCloser : public QObject
+@@ -3220,6 +3220,117 @@ QDockWidget *buildBrushDock(KisMainWindow *mw)
  void setFocusMode(KisMainWindow *mw, bool on);
  void showToast(KisMainWindow *mw, const QString &text);
  
@@ -132,7 +132,7 @@ index f94e812b33..c318a902ef 100644
  void buildTopBar(KisMainWindow *mw)
  {
      QToolBar *top = new QToolBar(i18n("Barra do Nanquim"), mw);
-@@ -3240,12 +3349,18 @@ void buildTopBar(KisMainWindow *mw)
+@@ -3249,17 +3360,22 @@ void buildTopBar(KisMainWindow *mw)
      top->addWidget(back);
  
      // título e informações do desenho
@@ -155,5 +155,8 @@ index f94e812b33..c318a902ef 100644
      tl->addWidget(info);
 +    QObject::connect(titleBox, &QToolButton::clicked, mw, [mw]() { toggleFilmstripDrawer(mw); });
      top->addWidget(titleBox);
+ 
+     QTimer *titleTimer = new QTimer(top);
 -- 
 2.43.0
+

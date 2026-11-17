@@ -42,6 +42,13 @@
 | Build 60: ajustes do pincel e estabilizador em pop-up, com teste ao vivo | Em teste | 0060 |
 | Build 60: roda de atalhos com pincéis (borracha, favoritos e recentes) | Em teste | 0061 |
 | Build 60: tela inicial, redesenho 3 | Em teste | 0062 |
+| Build 60.5: fluidez, pairar da S Pen refeito, tamanho no foco, cor fixada | Em teste | 0063 |
+| Build 60.5: modo foco no formato do gesto de quatro dedos | Em teste | 0064 |
+| Tela cheia do Krita com a cápsula vertical (o botão de foco usa a tela cheia nativa) | Em teste | 0065 |
+| Caneta desenha ao fechar pop-ups; um toque fecha tudo; trava no "comer" do toque (não engola o desenho para sempre); âncora com nome estável; inserir imagem espera a camada de verdade | Novo (build 65) | 0066 |
+| Jato no toque: triângulo da roda agrupado (laço por pixel só a ~33 Hz e repintando só a região), teto na memória de miniaturas, galeria não repete a animação de entrada | Novo (build 65) | 0067 |
+| Recursos quebrados (presets de bundle que falham) saem da abertura — eram ~280 recargas por sessão; fotos das animações com DPR limitado (grab() de página passava de 50 MB) | Novo (build 65) | 0068 |
+| Cronômetros de diagnóstico ligáveis no app (Configurações › Desempenho › "Registrar tempos no log") | Novo (build 65) | 0069 |
 | Versão para Windows (usa o modo Clássico por padrão) | Ideia | — |
 
 ## Importador `.sut`

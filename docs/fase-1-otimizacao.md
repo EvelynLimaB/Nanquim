@@ -11,6 +11,8 @@ O Krita já tem medidores internos, desligados por padrão (`libs/ui/kis_config.
 | `enableOpenGLFramerateLogging` | false | Quadros por segundo do canvas |
 | `enableBrushSpeedLogging` | false | Velocidade do pincel durante o traço |
 
+Desde o patch 0069 os cronômetros das telas (`[Nanquim tempo]` no log) podem ser ligados no próprio app: Configurações › Desempenho › "Registrar tempos no log". Para medir, ligue o interruptor, use o tablet um pouco e mande o arquivo de log.
+
 Primeiro patch planejado: ligar os dois só na build do Nanquim e mandar a saída para o `logcat`. A build já usa `-DANDROID_ENABLE_STDIO_FORWARDING`, então dá para ler com `adb logcat`, usando a depuração sem fio do tablet.
 
 ## 2. Padrões candidatos para tablet

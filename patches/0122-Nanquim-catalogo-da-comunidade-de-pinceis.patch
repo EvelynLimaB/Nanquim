@@ -1,6 +1,6 @@
-From 34978eaf20cf7e81edfa9160dd92269b5cba6e71 Mon Sep 17 00:00:00 2001
+From 94e2deb72545a3b5edd58f08d6e5092d099b631d Mon Sep 17 00:00:00 2001
 From: Nanquim <nanquim@users.noreply.github.com>
-Date: Mon, 23 Nov 2026 16:55:00 -0300
+Date: Mon, 23 Nov 2026 19:08:00 -0300
 Subject: =?utf-8?q?=5BPATCH=5D_Nanquim=3A_cat=C3=A1logo_da_comunidade_de_pinc=C3=A9is?=
  =?utf-8?q?_e_instalador_por_link_direto?=
 MIME-Version: 1.0
@@ -17,10 +17,11 @@ Content-Transfer-Encoding: 8bit
 - Inclui campo para instalar qualquer pacote .bundle, .kpp ou .sut por link
   direto e opção para trocar a URL do catálogo JSON
 ---
- libs/ui/NanquimTabletUi.cpp | 564 ++++++++++++++++++++++++++++++++++++
+ libs/ui/NanquimTabletUi.cpp                    | 564 ++++++++++++++++++++++++++++
  1 file changed, 564 insertions(+)
 
 diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
+index f49e84daf8..dcabe3d0a7 100644
 --- a/libs/ui/NanquimTabletUi.cpp
 +++ b/libs/ui/NanquimTabletUi.cpp
 @@ -60,6 +60,12 @@
@@ -35,7 +36,7 @@ diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
 +#include <QNetworkRequest>
  #include <QMouseEvent>
  #include <QTabletEvent>
- // filler 65
+ #include <QTouchEvent>
 @@ -345,6 +351,7 @@
  void applyBlueDraftLayer(KisMainWindow *mw);
  void toggleComicBucketPreset(KisMainWindow *mw);
@@ -44,7 +45,7 @@ diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
  
  // ---------------------------------------------------------------------------
  // Animações
-@@ -3583,6 +3590,14 @@
+@@ -3586,6 +3593,14 @@
      }
      root->addLayout(actions);
  
@@ -57,9 +58,9 @@ diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
 +    root->addWidget(communityButton);
 +
      auto reload = [group, model, list, empty, title]() {
- // filler 3587
- // filler 3588
-@@ -3693,6 +3708,10 @@
+         QAbstractButton *chip = group->checkedButton();
+         const QString cat = chip ? chip->property("nanquimCategory").toString() : QStringLiteral("Tinta");
+@@ -3696,6 +3711,10 @@
          KSharedConfig::openConfig()->group("Nanquim").writeEntry("brushCategory", BRUSH_IMPORTED);
          QTimer::singleShot(200, mw, [mw]() { importBrushFiles(mw); });
      });
@@ -68,8 +69,8 @@ diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
 +        QTimer::singleShot(160, mw, [mw]() { showCommunityCatalogSheet(mw); });
 +    });
      QObject::connect(add, &QToolButton::clicked, mw, [mw, group, reload]() {
- // filler 3697
- // filler 3698
+         if (saveCurrentAsNewBrush(mw)) {
+             if (QAbstractButton *chip = group->button(5)) chip->setChecked(true);
 @@ -12700,6 +12719,10 @@
      QObject::connect(webtoonAct, &QAction::triggered, mw, [mwGuard]() {
          if (mwGuard) showWebtoonToolsSheet(mwGuard, 0);

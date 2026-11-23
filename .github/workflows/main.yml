@@ -1,0 +1,62 @@
+name: Atualizar catálogo da comunidade
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_items:
+        description: "Quantidade máxima de pincéis no catálogo"
+        required: false
+        default: "150"
+      somente_download_direto:
+        description: "Incluir apenas pacotes com botão Instalar em 1 toque"
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    - cron: "23 6 * * *"
+
+concurrency:
+  group: atualizar-catalogo-comunidade
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Coletar pincéis do Krita-Artists
+        env:
+          MAX_ITEMS: ${{ github.event.inputs.max_items || '150' }}
+          ONLY_DIRECT: ${{ github.event.inputs.somente_download_direto || 'false' }}
+        run: |
+          EXTRA_FLAGS=""
+          if [ "$ONLY_DIRECT" = "true" ]; then
+            EXTRA_FLAGS="--only-direct"
+          fi
+          python3 scripts/atualizar_catalogo.py \
+            --output catalogo-comunidade.json \
+            --max-items "$MAX_ITEMS" \
+            $EXTRA_FLAGS
+
+      - name: Publicar catalogo-comunidade.json se houve mudanças
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalogo-comunidade.json
+          if git diff --cached --quiet; then
+            echo "Nenhuma mudança no catalogo-comunidade.json."
+          else
+            git commit -m "Nanquim: atualizar catalogo-comunidade.json (Krita-Artists)"
+            git push
+          fi

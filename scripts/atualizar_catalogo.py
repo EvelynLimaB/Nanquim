@@ -140,10 +140,11 @@ def detect_extension(url: str, link_text: str = "") -> str:
     for ext in VALID_EXTS:
         if path.endswith(ext):
             return ext
-    txt = link_text.strip().lower()
-    for ext in VALID_EXTS:
-        if txt.endswith(ext):
-            return ext
+    # No Discourse, o texto do anexo frequentemente vem como "pacote.bundle (4.2 MB)"
+    for hay in (path, link_text.lower()):
+        m = re.search(r"\.(bundle|kpp|sut|zip)(?:$|[?#\s\)\]\"'])", hay)
+        if m:
+            return "." + m.group(1)
     return ""
 
 
@@ -186,6 +187,20 @@ def extract_direct_download(posts: list[dict[str, Any]], author_username: str) -
                 continue
             prio = EXT_PRIORITY.get(ext, 9) + (0 if is_attachment else 10)
             candidates.append((prio, url, ext))
+        # Também checa link_counts que o Discourse entrega já normalizado no JSON
+        for lc in post.get("link_counts") or []:
+            u = normalize_url(str(lc.get("url") or ""))
+            if not u.startswith(("http://", "https://")):
+                continue
+            ext = detect_extension(u, str(lc.get("title") or ""))
+            is_att = "/uploads/short-url/" in u or "/uploads/default/original/" in u
+            # sem extensão reconhecida não dá para saber se é pacote ou imagem (print do tópico)
+            if not ext:
+                continue
+            if not is_att and not is_direct_download_host(u):
+                continue
+            prio = EXT_PRIORITY.get(ext, 9) + (1 if is_att else 12)
+            candidates.append((prio, u, ext))
         if candidates and idx == 0:
             break
 

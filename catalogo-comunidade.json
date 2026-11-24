@@ -4,7 +4,7 @@
   "source": "https://krita-artists.org/c/resources/brushes-and-bundles/32",
   "stats": {
     "total": 153,
-    "instalacao_direta": 17,
+    "instalacao_direta": 14,
     "manuais": 0
   },
   "items": [
@@ -14,13 +14,14 @@
       "author": "Ramon Miranda",
       "category": "Nanquim",
       "format": ".bundle",
-      "license": "Krita-Artists · 1443 curtidas",
+      "license": "Krita-Artists · 1454 curtidas",
       "description": "Links are available in the video description or in the pinned comment. Enjoy! BRUSHES DOWNLOAD: InkP bundle : PREVIEW: InkT bundle: PREVIEW:",
       "tags": [
         "bundle"
       ],
       "download_url": "https://files.kde.org/krita/extras/Ink_Pro_Artist.bundle",
-      "page_url": "https://krita-artists.org/t/ink-brushes-perfect-for-comic-and-realism/68857"
+      "page_url": "https://krita-artists.org/t/ink-brushes-perfect-for-comic-and-realism/68857",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/4/d/4d1ac3e237efc71338cf5abe52aaaa66b6e4284e_2_1024x657.jpeg"
     },
     {
       "id": "ka-59552",
@@ -36,7 +37,8 @@
         "zip"
       ],
       "download_url": "https://files.kde.org/krita/extras/Sketch%20V2%20for%20KRITA5.zip",
-      "page_url": "https://krita-artists.org/t/updated-to-include-v3-sketch-v2-sk2-pleasure-to-draw-including-colored-pencils-and-blenders/59552"
+      "page_url": "https://krita-artists.org/t/updated-to-include-v3-sketch-v2-sk2-pleasure-to-draw-including-colored-pencils-and-blenders/59552",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/a/1/a15515f78b1f6ea172d5cec582fb212c2b753bd8_2_1024x829.jpeg"
     },
     {
       "id": "ka-11749",
@@ -51,52 +53,41 @@
         "bundle"
       ],
       "download_url": "https://files.kde.org/krita/extras/charcoal/Charcoal_KA.bundle",
-      "page_url": "https://krita-artists.org/t/charcoal-ka-best-charcoals-ever-created-for-krita-by-their-community/11749"
+      "page_url": "https://krita-artists.org/t/charcoal-ka-best-charcoals-ever-created-for-krita-by-their-community/11749",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/5/559d2901a4f6fc35d0d71a9ddc172cbfdcd00eb4_2_716x1024.jpeg"
     },
     {
       "id": "ka-45795",
       "name": "SK Sketching in Krita V1",
       "author": "Ramon Miranda",
       "category": "Lápis",
-      "format": ".zip",
+      "format": ".bundle",
       "license": "Krita-Artists · 777 curtidas",
       "description": "If you like Sketching and Figure drawing, Gesture drawing and doodling… This is your pack. The bundle contains 18 Brush presets, 4 Patterns, 3 brushtips and a lot of effort. There are two…",
       "tags": [
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}",
-        "zip"
+        "bundle"
       ],
       "download_url": "https://files.kde.org/krita/extras/SK-V1-Bundle-with-TILT.zip",
-      "page_url": "https://krita-artists.org/t/sk-sketching-in-krita-v1/45795"
-    },
-    {
-      "id": "ka-47274",
-      "name": "Ink Pen (CSP-like)",
-      "author": "Chess",
-      "category": "Nanquim",
-      "format": ".kpp",
-      "license": "Krita-Artists · 649 curtidas",
-      "description": "I made a G pen brush, inspired by one of the brushes I usually use in Clip Studio:",
-      "tags": [
-        "kpp"
-      ],
-      "download_url": "https://krita-artists.org/t/solved-how-to-download-and-import-custom-brushes-png-kpp-zip-bundle/83227",
-      "page_url": "https://krita-artists.org/t/ink-pen-csp-like/47274"
+      "page_url": "https://krita-artists.org/t/sk-sketching-in-krita-v1/45795",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/d/6/d66f329ba4e8de74cb2770eaa89d9f84eb368ce9.jpeg"
     },
     {
       "id": "ka-56322",
       "name": "[update] Deevad 2025-01 Brush Bundle",
       "author": "David Revoy",
       "category": "Nanquim",
-      "format": ".zip",
+      "format": ".bundle",
       "license": "Krita-Artists · 352 curtidas",
       "description": "Hey, here is a direct link to my new Krita brushes: → deevad-bundle_25.01.zip License: CC-0 (public domain) There is already a video about the previous version (23.10), on my Youtube…",
       "tags": [
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}",
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}",
-        "zip"
+        "bundle"
       ],
       "download_url": "https://www.peppercarrot.com/extras/resources/deevad-bundle_25.01.zip",
-      "page_url": "https://krita-artists.org/t/update-deevad-2025-01-brush-bundle/56322"
+      "page_url": "https://krita-artists.org/t/update-deevad-2025-01-brush-bundle/56322",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/1/5/15207ef28c7adc1fac4be307b2a481eebbb0d109_2_1024x546.jpeg"
     },
     {
       "id": "ka-13299",
@@ -110,7 +101,8 @@
         "zip"
       ],
       "download_url": "https://www.dropbox.com/s/nconrhjb6ltai8f/wont_teach_you_to_draw_brushpack_v6.0.zip?dl=1",
-      "page_url": "https://krita-artists.org/t/version-6-0-of-wojtrybs-wont-teach-you-to-draw-brushpack-relased/13299"
+      "page_url": "https://krita-artists.org/t/version-6-0-of-wojtrybs-wont-teach-you-to-draw-brushpack-relased/13299",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/e/c/ec44feccbd11abab1145aede311a13a939cca2d6_2_689x1024.jpeg"
     },
     {
       "id": "ka-78427",
@@ -123,8 +115,9 @@
       "tags": [
         "zip"
       ],
-      "download_url": "https://www.dropbox.com/scl/fi/l47drigfva6hb6bx36xbg/LM-Comics.zip?rlkey=tagpvovxc77dfd6p372g8tt2k&dl=0",
-      "page_url": "https://krita-artists.org/t/brush-pack-for-comics-and-illustrations/78427"
+      "download_url": "https://www.dropbox.com/scl/fi/l47drigfva6hb6bx36xbg/LM-Comics.zip?rlkey=tagpvovxc77dfd6p372g8tt2k&dl=1",
+      "page_url": "https://krita-artists.org/t/brush-pack-for-comics-and-illustrations/78427",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/4/54bcb560886c830914e9476750cec7bcf7e927f2_2_1024x614.jpeg"
     },
     {
       "id": "ka-95656",
@@ -138,8 +131,9 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}",
         "zip"
       ],
-      "download_url": "https://www.dropbox.com/scl/fi/7q9v4svm7ce775jxg6hlv/Outline-brushes.zip?rlkey=g9ksqf7pk8av7qxwkyo2qtc7b&st=avhcougc&dl=0",
-      "page_url": "https://krita-artists.org/t/outline-brushes/95656"
+      "download_url": "https://www.dropbox.com/scl/fi/7q9v4svm7ce775jxg6hlv/Outline-brushes.zip?rlkey=g9ksqf7pk8av7qxwkyo2qtc7b&st=avhcougc&dl=1",
+      "page_url": "https://krita-artists.org/t/outline-brushes/95656",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/4/b/4b45962d4354cc907729a96832ebd6c7e592e0c7.jpeg"
     },
     {
       "id": "ka-19360",
@@ -153,7 +147,8 @@
         "bundle"
       ],
       "download_url": "https://files.kde.org/krita/extras/Impression_V1.1_2023.bundle",
-      "page_url": "https://krita-artists.org/t/impressionism-with-krita-in-2021-are-you-in/19360"
+      "page_url": "https://krita-artists.org/t/impressionism-with-krita-in-2021-are-you-in/19360",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/6/8/68a0f26bbe8575566ced9cfd03cd5095a713918d_2_1024x723.jpeg"
     },
     {
       "id": "ka-146042",
@@ -166,8 +161,9 @@
       "tags": [
         "zip"
       ],
-      "download_url": "https://www.dropbox.com/scl/fi/k8zdez6i3zw3x79mbgu3x/LM-Plants.zip?rlkey=2j0tut85hlhabyj0o6jgfg3n5&st=mwt4tqzv&dl=0",
-      "page_url": "https://krita-artists.org/t/grass-and-greenery-brush-bundle/146042"
+      "download_url": "https://www.dropbox.com/scl/fi/k8zdez6i3zw3x79mbgu3x/LM-Plants.zip?rlkey=2j0tut85hlhabyj0o6jgfg3n5&st=mwt4tqzv&dl=1",
+      "page_url": "https://krita-artists.org/t/grass-and-greenery-brush-bundle/146042",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/7/9/79907e950e53cf50120b3b1aa3dd1caee20ce8ac.png"
     },
     {
       "id": "ka-114748",
@@ -181,22 +177,9 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}",
         "zip"
       ],
-      "download_url": "https://www.dropbox.com/scl/fi/kp8bgrqx7thsav9ammamv/LM_Hatching_brushes.zip?rlkey=vfm63i6698nxictmenilzz5ia&st=towgadvq&dl=0",
-      "page_url": "https://krita-artists.org/t/hatching-brushes/114748"
-    },
-    {
-      "id": "ka-41203",
-      "name": "Realistic Copic marker like brushes",
-      "author": "Hologram",
-      "category": "Nanquim",
-      "format": ".bundle",
-      "license": "Krita-Artists · 103 curtidas",
-      "description": "Although the default marker brushes aren’t bad, I still think they aren’t capturing the way Copic markers work. In reality, the Copic ink comes out wet and takes a while to dry, in the…",
-      "tags": [
-        "bundle"
-      ],
-      "download_url": "https://icedrive.net/s/7PRADWB4AYBNuS95SCbGP6kjFS3V",
-      "page_url": "https://krita-artists.org/t/realistic-copic-marker-like-brushes/41203"
+      "download_url": "https://www.dropbox.com/scl/fi/kp8bgrqx7thsav9ammamv/LM_Hatching_brushes.zip?rlkey=vfm63i6698nxictmenilzz5ia&st=towgadvq&dl=1",
+      "page_url": "https://krita-artists.org/t/hatching-brushes/114748",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/e/c/ec8d820e8a3d06720bfcfe4f57dd2bc2eaf5c65b.jpeg"
     },
     {
       "id": "ka-85040",
@@ -210,22 +193,9 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}",
         "zip"
       ],
-      "download_url": "https://www.dropbox.com/scl/fi/hev14hmgl1axsmkznh3tb/Gold-and-Pearl.zip?rlkey=djptwssjtbnbqhy5os9sfquok&st=f14tky1u&dl=0",
-      "page_url": "https://krita-artists.org/t/gold-and-pearl-gradients-set-for-krita/85040"
-    },
-    {
-      "id": "ka-110321",
-      "name": "iForce73 - Environments 2.0 - Michelist Re-Pack",
-      "author": "Michael Strothotte",
-      "category": "Pintura",
-      "format": ".zip",
-      "license": "Krita-Artists · 85 curtidas",
-      "description": "Today, I would like to make a small gift to the community, simply because other users keep asking for this resource collection and how to install it on Krita 5. ¹ Since iForce73 has not…",
-      "tags": [
-        "zip"
-      ],
-      "download_url": "https://kdrive.infomaniak.com/app/share/562629/5935fe78-4b45-4e4a-ac11-fb336f9d3ad5",
-      "page_url": "https://krita-artists.org/t/iforce73-environments-2-0-michelist-re-pack/110321"
+      "download_url": "https://www.dropbox.com/scl/fi/hev14hmgl1axsmkznh3tb/Gold-and-Pearl.zip?rlkey=djptwssjtbnbqhy5os9sfquok&st=f14tky1u&dl=1",
+      "page_url": "https://krita-artists.org/t/gold-and-pearl-gradients-set-for-krita/85040",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/3/535b9513fcce02fdf8c5b173ad825221bdd88c24_2_1024x1024.jpeg"
     },
     {
       "id": "ka-182077",
@@ -241,7 +211,8 @@
         "bundle"
       ],
       "download_url": "https://file.garden/aaZBX2ul0l6TtsN_/(V2)_NalNel_Brush_Pack.bundle",
-      "page_url": "https://krita-artists.org/t/5-3-1-nalnel-brush-pack-a-4-brush-recreation-set/182077"
+      "page_url": "https://krita-artists.org/t/5-3-1-nalnel-brush-pack-a-4-brush-recreation-set/182077",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/d/3db8e2aceaa6eb4829015513ba639ed2ac4be72c_2_1024x784.jpeg"
     },
     {
       "id": "ka-192985",
@@ -255,7 +226,8 @@
         "zip"
       ],
       "download_url": "https://files.catbox.moe/sd70cc.zip",
-      "page_url": "https://krita-artists.org/t/simple-wiggly-wobble-shake-doodle-templates/192985"
+      "page_url": "https://krita-artists.org/t/simple-wiggly-wobble-shake-doodle-templates/192985",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/d/5/d5e0560e4a869b8518eea50149aa76dd714ee249.gif"
     },
     {
       "id": "ka-64930",
@@ -267,7 +239,8 @@
       "description": "Finnished bundle: Memileo Impasto Brushes Some experiments with animated RGBA brushtips, made using a rotating light in Blender. Rotation set to Drawing angle in Krita. gih export with the…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/rotating-light-brushtips-wip/64930"
+      "page_url": "https://krita-artists.org/t/rotating-light-brushtips-wip/64930",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/0/3024c4a7d1d137ef3099382aa3a09f18d3de192b_2_1024x730.jpeg"
     },
     {
       "id": "ka-3944",
@@ -279,7 +252,8 @@
       "description": "Here is Gumroad link to download free set of watercolor brushes. Soon I will show some examples how they work.",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/set-of-watercolor-brushes/3944"
+      "page_url": "https://krita-artists.org/t/set-of-watercolor-brushes/3944",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/2X/7/7544c59c7dc874f5b39471fcab7034af8ee16f39_2_1024x492.jpeg"
     },
     {
       "id": "ka-92952",
@@ -294,7 +268,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/memileo-impasto-brushes/92952"
+      "page_url": "https://krita-artists.org/t/memileo-impasto-brushes/92952",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/c/c/ccc7d339f7a106e6ed900e23f59209ef925c46a4.jpeg"
     },
     {
       "id": "ka-84378",
@@ -310,7 +285,8 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/its-free-now-krita-5-x-expansion-extra-bundle/84378"
+      "page_url": "https://krita-artists.org/t/its-free-now-krita-5-x-expansion-extra-bundle/84378",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/7/2/72c6d9f8ad260982d42820d33c943a85892d38af_2_1024x576.jpeg"
     },
     {
       "id": "ka-33709",
@@ -322,7 +298,8 @@
       "description": "Thank you so much for all the support on my previous brush set! You have all been kind and amazing! I have worked on and off ever since on an updated brush set (in between studies, life…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/rakurri-brush-set-v2-free-krita-brushes/33709"
+      "page_url": "https://krita-artists.org/t/rakurri-brush-set-v2-free-krita-brushes/33709",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/2/7/27eb5a9ac4ffac751d417efb9103c57809d358b4_2_1024x576.jpeg"
     },
     {
       "id": "ka-106425",
@@ -339,7 +316,21 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/metallics-by-draneria/106425"
+      "page_url": "https://krita-artists.org/t/metallics-by-draneria/106425",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/e/3e01a557a4c583125a7e2a1de0c63796f45d4853_2_819x1024.jpeg"
+    },
+    {
+      "id": "ka-47274",
+      "name": "Ink Pen (CSP-like)",
+      "author": "Chess",
+      "category": "Nanquim",
+      "format": "Tópico",
+      "license": "Krita-Artists · 649 curtidas",
+      "description": "I made a G pen brush, inspired by one of the brushes I usually use in Clip Studio:",
+      "tags": [],
+      "download_url": "",
+      "page_url": "https://krita-artists.org/t/ink-pen-csp-like/47274",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/f/3/f3a39053287a749b6e4f5ff8da61fff397943674_2_1024x667.png"
     },
     {
       "id": "ka-82826",
@@ -351,7 +342,8 @@
       "description": "Hello everyone. I am very happy to share this new bundle These are brushes intended to do what I appreciate in traditional painting. (gouache and acrylic) where the matter runs out. I had…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/dry-dirty-bundle/82826"
+      "page_url": "https://krita-artists.org/t/dry-dirty-bundle/82826",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/2/e/2e6672d224598c034a74360d4a04f37a123cc0e8_2_1024x419.jpeg"
     },
     {
       "id": "ka-105348",
@@ -366,7 +358,8 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/yet-another-brush-texture-promo-tombofnull/105348"
+      "page_url": "https://krita-artists.org/t/yet-another-brush-texture-promo-tombofnull/105348",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/4/0/40c747c61d1737193c1d2cc111ca50cce79f4626_2_1022x1024.jpeg"
     },
     {
       "id": "ka-34694",
@@ -378,7 +371,8 @@
       "description": "The following is the translation result of the translation software I transferred the PS brush that I used to Krita, many of whom brushes should be very familiar with users who use PS…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/photoshop-common-brush-transfer-with-original-brush/34694"
+      "page_url": "https://krita-artists.org/t/photoshop-common-brush-transfer-with-original-brush/34694",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/c/e/ceb5a636ed348b026e1eed163dd4f41b71c58640_2_745x1024.jpeg"
     },
     {
       "id": "ka-17170",
@@ -390,7 +384,8 @@
       "description": "I made this single brush preset that I use for casual sketching. This supposed to imitate the look and feel of cheap ballpoint pen that I commonly use. This brush uses multiply blending…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/cheap-ballpoint-pen-brush/17170"
+      "page_url": "https://krita-artists.org/t/cheap-ballpoint-pen-brush/17170",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/b/3/b3eb36ab2f9629354ca42e52eea66c6e617f8c89_2_1024x1024.jpeg"
     },
     {
       "id": "ka-89664",
@@ -405,7 +400,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/mikhailasmos-inking-brush-set/89664"
+      "page_url": "https://krita-artists.org/t/mikhailasmos-inking-brush-set/89664",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/1/8/18302cda07b75a6429dfbe1c7d2af726ee5c93e2.png"
     },
     {
       "id": "ka-73185",
@@ -417,7 +413,8 @@
       "description": "Big bundles for producing comic books. Hope you enjoy them, and hope to see some good comics! Edit:Add by AhabGreybeard: The link below is for the updated presentation by @saeger and has…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/mojo-moo-for-comics/73185"
+      "page_url": "https://krita-artists.org/t/mojo-moo-for-comics/73185",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/e/c/ec069326bae5ceb594430c1493bb02d3d481cfb0.png"
     },
     {
       "id": "ka-112165",
@@ -433,7 +430,8 @@
         "{'id': 72, 'name': 'palletes', 'slug': 'palletes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/puplaroids-retro-comic-bundle-new-template/112165"
+      "page_url": "https://krita-artists.org/t/puplaroids-retro-comic-bundle-new-template/112165",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/c/3cdaa04c7fb4bbcc759194eba470e65b5efbb519_2_819x1024.jpeg"
     },
     {
       "id": "ka-79814",
@@ -448,7 +446,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/lur-noises-thats-me-brush-pack/79814"
+      "page_url": "https://krita-artists.org/t/lur-noises-thats-me-brush-pack/79814",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/f/5f00e9cfb00b0f5872b881094fe287b836da3fd6_2_1024x1024.jpeg"
     },
     {
       "id": "ka-49716",
@@ -462,7 +461,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/replicating-csps-nacho-pen-for-krita/49716"
+      "page_url": "https://krita-artists.org/t/replicating-csps-nacho-pen-for-krita/49716",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/9/2/92e56c75bd0da9bef728402afa320c836e963e46.png"
     },
     {
       "id": "ka-60632",
@@ -476,7 +476,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/wavenwater-concept-art-traditional-medium-beta/60632"
+      "page_url": "https://krita-artists.org/t/wavenwater-concept-art-traditional-medium-beta/60632",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/8/2/82165a3963ea4e3c4b936dd1f392a90ea0426a2a.jpeg"
     },
     {
       "id": "ka-142853",
@@ -488,7 +489,8 @@
       "description": "hello everyone! I have a recommendation for you regarding packs, the brushes and gradients from Angelarium that he use for his illustrations, here I’ll provide the links. Size Flow Brushes…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/brushes-and-gradients-from-peter-mohrbacher-angelarium/142853"
+      "page_url": "https://krita-artists.org/t/brushes-and-gradients-from-peter-mohrbacher-angelarium/142853",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/d/3/d3a32c856a15cb8c929c79bedc5ecae49e5616cc_2_1024x1024.jpeg"
     },
     {
       "id": "ka-144394",
@@ -502,7 +504,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/vals-realistic-ink-pen/144394"
+      "page_url": "https://krita-artists.org/t/vals-realistic-ink-pen/144394",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/0/6/06a8150603fd5e27a34481aff27802b4d95a3ae3.png"
     },
     {
       "id": "ka-38580",
@@ -514,7 +517,8 @@
       "description": "Download links Gumroad – Google Drive Hi! After 100 years , I have finally released the update to my original “180+ essential brush collection”! This brush pack contains mostly “ cheat…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/fizzyflowers-essential-brushset-version-2-with-400-brushes-cloud-paint-hair-fur-fx-foilage-trees-leaves-texture-smudge-and-more/38580"
+      "page_url": "https://krita-artists.org/t/fizzyflowers-essential-brushset-version-2-with-400-brushes-cloud-paint-hair-fur-fx-foilage-trees-leaves-texture-smudge-and-more/38580",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/9/9/99d76521e9ea44e2dfed8501d7a5eda6fe4b56fa_2_1024x1024.jpeg"
     },
     {
       "id": "ka-112682",
@@ -526,7 +530,8 @@
       "description": "Hello everyone! I made this bundle a while ago and realized i forgot to share it here It is a complete overhaul of the previous bundle(v1.2): • All the brushes were remade from scratch to…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/concept-illustration-v2/112682"
+      "page_url": "https://krita-artists.org/t/concept-illustration-v2/112682",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/9/a/9a378ef25cd931eb200e8b92b260a994e04c4415_2_1024x731.png"
     },
     {
       "id": "ka-107974",
@@ -540,7 +545,8 @@
         "{'id': 114, 'name': 'payment-required', 'slug': 'payment-required'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/chaos-ink-brushes-by/107974"
+      "page_url": "https://krita-artists.org/t/chaos-ink-brushes-by/107974",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/4/f/4fc97bd8d20301c2142f865946db58b6b37dea63_2_1024x576.png"
     },
     {
       "id": "ka-24304",
@@ -552,7 +558,8 @@
       "description": "Use Krita 5 (alpha) nightly builds for full functionality Update May 31st: added 22 brushes renamed and made hopefully somewhat good/clear icons rescaled the canvas texture down to 512…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/theflows-mixer-concept-brushes-v1-1-work-in-progress-krita-5/24304"
+      "page_url": "https://krita-artists.org/t/theflows-mixer-concept-brushes-v1-1-work-in-progress-krita-5/24304",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/d/e/de0435b0254f788dfaf2b2d223f73c8bdfc765ab_2_1024x689.jpeg"
     },
     {
       "id": "ka-80857",
@@ -567,7 +574,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/hair-brushes-a-gift-for-christmas-working-links-in-posting-from-michelist-from-13th-february-2026/80857"
+      "page_url": "https://krita-artists.org/t/hair-brushes-a-gift-for-christmas-working-links-in-posting-from-michelist-from-13th-february-2026/80857",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/1/511a21aa130e2433a112b433bf871af18d7d7986_2_1024x1024.jpeg"
     },
     {
       "id": "ka-119794",
@@ -581,7 +589,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/jp-color-mixer-brushes/119794"
+      "page_url": "https://krita-artists.org/t/jp-color-mixer-brushes/119794",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/0/3099ad6085bfb5376293ef7f2dd9fbeefcfc5328_2_1024x594.jpeg"
     },
     {
       "id": "ka-82507",
@@ -597,7 +606,8 @@
         "{'id': 114, 'name': 'payment-required', 'slug': 'payment-required'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/gege-akutami-line-brushes/82507"
+      "page_url": "https://krita-artists.org/t/gege-akutami-line-brushes/82507",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/d/c/dcae4262af6cf938aecf8c9cf1a8030e371b29c7_2_1024x576.png"
     },
     {
       "id": "ka-73620",
@@ -612,7 +622,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/awez-flat-brushes/73620"
+      "page_url": "https://krita-artists.org/t/awez-flat-brushes/73620",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/6/86fecb9e2fb597254ff67ca08e6d95a4e2e26356_2_1024x1002.jpeg"
     },
     {
       "id": "ka-3524",
@@ -624,7 +635,8 @@
       "description": "Video showcase of some of the brushes: Rakurri Brush Set V1.0 The Krita community is amazing! I want to give something back to this wonderful community! These are the brushes I use, and I…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/rakurri-brush-set-free-krita-brushes/3524"
+      "page_url": "https://krita-artists.org/t/rakurri-brush-set-free-krita-brushes/3524",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/2/7/27eb5a9ac4ffac751d417efb9103c57809d358b4_2_1024x576.jpeg"
     },
     {
       "id": "ka-127078",
@@ -639,7 +651,8 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/100k-subs-in-youtube-celebration-real-papers-templates-gift-1/127078"
+      "page_url": "https://krita-artists.org/t/100k-subs-in-youtube-celebration-real-papers-templates-gift-1/127078",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/d/3db6a45acb6c41b2ed8e7b4d0adc9e0d375b3d7b_2_1024x576.jpeg"
     },
     {
       "id": "ka-92704",
@@ -651,7 +664,8 @@
       "description": "In an attempt to give back a little I’ve released a brush pack of all my custom “hard” brushes. Hopefully its useful to someone, have a great day!",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/hard-brushes-pack/92704"
+      "page_url": "https://krita-artists.org/t/hard-brushes-pack/92704",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/1/0/104a0eeefdc1a128231650297a24dd40510210b4_2_1024x509.jpeg"
     },
     {
       "id": "ka-80411",
@@ -663,7 +677,8 @@
       "description": "Greetings to all Update 2.1 available This set of brushes for Krita 5 aims to emulate non-traditional drawing tools such as wooden reeds, small branches, and other elements used as a…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/expressive-inks-bundle-brushes-for-krita-5/80411"
+      "page_url": "https://krita-artists.org/t/expressive-inks-bundle-brushes-for-krita-5/80411",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/b/3b78beb947a179d874986559fe33801df816ff3f_2_1024x724.jpeg"
     },
     {
       "id": "ka-110560",
@@ -678,7 +693,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/my-bristle-engine-brushes/110560"
+      "page_url": "https://krita-artists.org/t/my-bristle-engine-brushes/110560",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/2/82e3924397d43158b00cc1eec4a455e64bf5f3cf_2_1024x1024.jpeg"
     },
     {
       "id": "ka-181824",
@@ -696,7 +712,8 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/vinnys-alpha-test-bundle-krita-6-upd-28-09-26/181824"
+      "page_url": "https://krita-artists.org/t/vinnys-alpha-test-bundle-krita-6-upd-28-09-26/181824",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/4/2/4215dc326a2f41fcb44425cd403db60fc3ae3682_2_1024x953.jpeg"
     },
     {
       "id": "ka-81682",
@@ -711,7 +728,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/glitches-and-distortion-brush-bundle/81682"
+      "page_url": "https://krita-artists.org/t/glitches-and-distortion-brush-bundle/81682",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/f/7/f7823dafd5c724400d2b75d98978f618421e9829_2_1024x1024.jpeg"
     },
     {
       "id": "ka-50772",
@@ -723,7 +741,8 @@
       "description": "Hi all I`ve made my first-ever brush pack! It is a collection of different patterns and effects to help create great images more easily And here is a link to Google disk for those who…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/lilly-mist-s-special-brushes/50772"
+      "page_url": "https://krita-artists.org/t/lilly-mist-s-special-brushes/50772",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/6/e/6e604ed38a6aa752a3c9a5e4fd28f816f757544c_2_1024x614.jpeg"
     },
     {
       "id": "ka-144378",
@@ -738,7 +757,8 @@
         "{'id': 114, 'name': 'payment-required', 'slug': 'payment-required'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/apes-sketching-brush/144378"
+      "page_url": "https://krita-artists.org/t/apes-sketching-brush/144378",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/e/c/ecceafb4eec5ab7219d18f4e71c435441b563475_2_1024x597.jpeg"
     },
     {
       "id": "ka-92057",
@@ -750,7 +770,8 @@
       "description": "I’ve had this weird thought of what if digital glitter pens were a thing?? inspired by gelly roll stardust pens. this is an experimental brush",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/glitter-gel-pens/92057"
+      "page_url": "https://krita-artists.org/t/glitter-gel-pens/92057",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/e/0/e0c3ece5f925aad4bfe0da83162fa68981b95178_2_913x1024.jpeg"
     },
     {
       "id": "ka-56626",
@@ -762,7 +783,8 @@
       "description": "Daily Brush Set is a Krita Bundle which contains the brushes that I use daily. These are brushes derived from Krita’s default brushes (Basic-1, Basic-2 Opacity, Basic-5 Size, Ink-7 Brush…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/konayachi-daily-brush-set/56626"
+      "page_url": "https://krita-artists.org/t/konayachi-daily-brush-set/56626",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/c/d/cd46c315034c555e8d0cd18f336b3bcd5d7c21d4.jpeg"
     },
     {
       "id": "ka-66120",
@@ -774,7 +796,8 @@
       "description": "I made three interesting cloud brushes",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/basic-cloud-brushes/66120"
+      "page_url": "https://krita-artists.org/t/basic-cloud-brushes/66120",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/c/6/c66389e0a4e2305d4e70d8261570c0e930ee886b_2_1024x578.jpeg"
     },
     {
       "id": "ka-169898",
@@ -789,7 +812,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/linear-hatching-brushpack/169898"
+      "page_url": "https://krita-artists.org/t/linear-hatching-brushpack/169898",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/7/572c99d4e6e2e4f8813cfb57b8d7e310fd4bd23e_2_1023x724.jpeg"
     },
     {
       "id": "ka-187153",
@@ -804,7 +828,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/alba-fox-manga-brush-pack/187153"
+      "page_url": "https://krita-artists.org/t/alba-fox-manga-brush-pack/187153",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/d/d/dd3723f9d06aaefb05cb0411ae44b73f1934965b_2_819x1024.jpeg"
     },
     {
       "id": "ka-89427",
@@ -819,7 +844,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/inkksunas-prismatic-brush-bundle-free/89427"
+      "page_url": "https://krita-artists.org/t/inkksunas-prismatic-brush-bundle-free/89427",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/b/0/b0ab0644462800aff85476ec5781c88dd163f315_2_673x1024.jpeg"
     },
     {
       "id": "ka-96487",
@@ -831,7 +857,8 @@
       "description": "I experiment a lot with brushes and would like to share my developments with the community. These are basically brushes to simplify the workflow. I change many of them during the process…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/experimental-brushes/96487"
+      "page_url": "https://krita-artists.org/t/experimental-brushes/96487",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/9/7/9785e3d24e11871771e7879d99aa370b92a13561_2_1024x731.jpeg"
     },
     {
       "id": "ka-105070",
@@ -846,7 +873,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/missoonis-packs/105070"
+      "page_url": "https://krita-artists.org/t/missoonis-packs/105070",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/7/871cbeacee77bb4a9b6f43173d1a317cf2f90454_2_682x1024.jpeg"
     },
     {
       "id": "ka-33381",
@@ -858,7 +886,8 @@
       "description": "Free gradient maps for Krita! I wanted to make a Gradient Map set for the community since I don’t really see any made for Krita, and there are not many default Gradient Maps. This set…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/rakurri-gradient-map-set-free-gradient-maps/33381"
+      "page_url": "https://krita-artists.org/t/rakurri-gradient-map-set-free-gradient-maps/33381",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/0/802ec04351f10ce6effcd5f1aba036d933ce082c_2_1024x585.jpeg"
     },
     {
       "id": "ka-125713",
@@ -873,7 +902,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/jp-illustration-toolkit-updated/125713"
+      "page_url": "https://krita-artists.org/t/jp-illustration-toolkit-updated/125713",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/4/8/48aa96990045ccbb0fc1acbd36ad9a7b516085f3.png"
     },
     {
       "id": "ka-120854",
@@ -888,7 +918,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/brush-set-rusty-dip-pens-traditional-inking-simulation-for-manga-and-comic/120854"
+      "page_url": "https://krita-artists.org/t/brush-set-rusty-dip-pens-traditional-inking-simulation-for-manga-and-comic/120854",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/9/39fdfd91a39b4f646ba88363009f5b0bbca174e4_2_1024x909.jpeg"
     },
     {
       "id": "ka-9241",
@@ -900,7 +931,8 @@
       "description": "NEW AND IMPROVED VERSION 2 OF THIS BRUSHSET WAS RELEASED FOR KRITA 5.0+ DOWNLOAD HERE!!! Gumroad download link ---- Google Drive link Hi! I’m sharing my massive 180+ collection of…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/old-and-outdated-new-version-2-released-fizzyflowers-essential-180-brush-set-cloud-paint-hair-fur-fx-foilage-trees-leaves-texture-smudge-and-more/9241"
+      "page_url": "https://krita-artists.org/t/old-and-outdated-new-version-2-released-fizzyflowers-essential-180-brush-set-cloud-paint-hair-fur-fx-foilage-trees-leaves-texture-smudge-and-more/9241",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/2X/1/10a1425803e5d532bda46ad7848194406f41aeab_2_1024x1024.jpeg"
     },
     {
       "id": "ka-39643",
@@ -912,7 +944,8 @@
       "description": "DOWNLOAD : Chalks_for_Children.bundle - Google Drive @raghukamath If there is a better place for them please let me know or move the bundle there. Here we go! New bundle for the Krita…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/dirty-chalk-for-children-free/39643"
+      "page_url": "https://krita-artists.org/t/dirty-chalk-for-children-free/39643",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/a/5aa918d7d68750fd918107ddbc3bc0844879bb83_2_1024x576.jpeg"
     },
     {
       "id": "ka-84691",
@@ -927,7 +960,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/oil-brushes-for-krita-5/84691"
+      "page_url": "https://krita-artists.org/t/oil-brushes-for-krita-5/84691",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/c/b/cbb8fe5e3d8b4cd3cabfefbd5b5028b2d6b9abda_2_1024x1024.jpeg"
     },
     {
       "id": "ka-94084",
@@ -942,7 +976,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/6-usefull-brushes-lineart-already/94084"
+      "page_url": "https://krita-artists.org/t/6-usefull-brushes-lineart-already/94084",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/7/c/7c30e51263029e4e8f05b11b7492c77728969855_2_1024x723.jpeg"
     },
     {
       "id": "ka-185228",
@@ -954,7 +989,8 @@
       "description": "Introduction: Over the years, there have been many support topics where there were problems with pressure signals and confusion about what the pressure signal is and what happens to it…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/show-and-tell-pressure-reporting-brush-preset-includes-a-challenge/185228"
+      "page_url": "https://krita-artists.org/t/show-and-tell-pressure-reporting-brush-preset-includes-a-challenge/185228",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/f/8/f817cb9fc8a8f6a42bba453c7773111d61a4fd58.png"
     },
     {
       "id": "ka-52452",
@@ -966,7 +1002,8 @@
       "description": "Download here Nothing fancy. It’s just a minimal version of the previous bundle with some tweaks and a few new brushes. The idea is to reduce the brush amount to a minimum in order to…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/concept-illustration-lite-bundle/52452"
+      "page_url": "https://krita-artists.org/t/concept-illustration-lite-bundle/52452",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/5/e/5e345205d369044f16caa155401573c1493d8525.png"
     },
     {
       "id": "ka-103029",
@@ -981,7 +1018,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/waffles-textured-brush-pack/103029"
+      "page_url": "https://krita-artists.org/t/waffles-textured-brush-pack/103029",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/0/3/03f8dca7373954a4c0f83e3a7958cff0d38c58f3_2_1024x1024.jpeg"
     },
     {
       "id": "ka-115126",
@@ -993,7 +1031,8 @@
       "description": "Hellow, forum dwellers! This bundle contains 9 pens, 1 eraser for screentones + 5 patterns that are not used for brushes but are in the bundle (line patterns, a tone pattern). Created this…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/aurelia-s-lineart-comic-bundle/115126"
+      "page_url": "https://krita-artists.org/t/aurelia-s-lineart-comic-bundle/115126",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/2/2/22834a4b0b79880b1bf23d5df13d3567551c6c70_2_1023x613.jpeg"
     },
     {
       "id": "ka-106206",
@@ -1008,7 +1047,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/crayons-and-pencils-brush-bundle/106206"
+      "page_url": "https://krita-artists.org/t/crayons-and-pencils-brush-bundle/106206",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/c/f/cfe2c8790606d613472ba862f0782c081f010917_2_1024x767.jpeg"
     },
     {
       "id": "ka-127492",
@@ -1022,7 +1062,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/custom-previews-for-your-brushes/127492"
+      "page_url": "https://krita-artists.org/t/custom-previews-for-your-brushes/127492",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/d/e/de97d2999ab5569a881424b36e1e3ba9d1e3da2a_2_884x1024.jpeg"
     },
     {
       "id": "ka-91935",
@@ -1034,7 +1075,8 @@
       "description": "ALL CREDIT GOES TO THE CREATOR OF THE BRUSH - MAMEO! Recreation of the Mameo Pen which is originally a clip studio paint brush download: Mameo Pen Bundle – Google Drive CSP link: I’m not…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/mameo-pen-by-mameo-recreated-for-krita/91935"
+      "page_url": "https://krita-artists.org/t/mameo-pen-by-mameo-recreated-for-krita/91935",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/b/9/b9279f614b89b95e75ffdbe2f802de59f54f843b.png"
     },
     {
       "id": "ka-53579",
@@ -1049,7 +1091,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/memileo-brushes/53579"
+      "page_url": "https://krita-artists.org/t/memileo-brushes/53579",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/7/0/70764e22d8d1428639dabe14b173528b00ef660c.jpeg"
     },
     {
       "id": "ka-48228",
@@ -1064,7 +1107,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/free-krita-pixel-art-brush-set/48228"
+      "page_url": "https://krita-artists.org/t/free-krita-pixel-art-brush-set/48228",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/2/e/2edb5a67bfbcec3c6725621ecd4088e50fa58ec4.png"
     },
     {
       "id": "ka-182149",
@@ -1078,7 +1122,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/toumins-usagi-fineliner-pen-2-0/182149"
+      "page_url": "https://krita-artists.org/t/toumins-usagi-fineliner-pen-2-0/182149",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/e/9/e98d4554f11b8fd44a1affa0ba7a9b4b85bca833.png"
     },
     {
       "id": "ka-55568",
@@ -1094,7 +1139,8 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/awez-brush-bundle-bonanza/55568"
+      "page_url": "https://krita-artists.org/t/awez-brush-bundle-bonanza/55568",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/9/6/96772491987c7dae0d572fd1464c529fec7c3f08_2_1024x807.jpeg"
     },
     {
       "id": "ka-76255",
@@ -1108,7 +1154,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/free-v-1-0-adobe-fresco-pencil-krita-version/76255"
+      "page_url": "https://krita-artists.org/t/free-v-1-0-adobe-fresco-pencil-krita-version/76255",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/2/3/23ccd410b8d0dee0bf2fe6e2fc63b7d50dfeca46.png"
     },
     {
       "id": "ka-63645",
@@ -1122,7 +1169,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/awez-basic-brushes/63645"
+      "page_url": "https://krita-artists.org/t/awez-basic-brushes/63645",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/e/4/e4c488e33929d72d6d48a938bb4eff9c1f7129dd_2_1024x768.jpeg"
     },
     {
       "id": "ka-42896",
@@ -1134,7 +1182,8 @@
       "description": "I have been experimenting a bit with the brush engine in Krita to get to understand it better. I like brushes with hard edges but also an organic edge, and after some trial and error I got…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/hard-edge-charcoal-brushes-with-texture/42896"
+      "page_url": "https://krita-artists.org/t/hard-edge-charcoal-brushes-with-texture/42896",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/c/2/c2e1a07da0a48f1d7dcee26b11a7e2dcdd419c00_2_1024x724.png"
     },
     {
       "id": "ka-42968",
@@ -1146,7 +1195,8 @@
       "description": "What we have now I think we need to gather the resources (bundles, patterns, plugins). And imho they would need to be in the Krita.org page. WHY? KA is a forum and the section about…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/gathering-the-resources-in-2022-your-bundle-in-the-main-page-krita-needs-your-help/42968"
+      "page_url": "https://krita-artists.org/t/gathering-the-resources-in-2022-your-bundle-in-the-main-page-krita-needs-your-help/42968",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/9/8/9837a721ecd313c61732566887b313e60de6d9b7_2_1024x432.png"
     },
     {
       "id": "ka-56808",
@@ -1160,7 +1210,8 @@
         "{'id': 71, 'name': 'themes', 'slug': 'themes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/4-new-themes-for-krita/56808"
+      "page_url": "https://krita-artists.org/t/4-new-themes-for-krita/56808",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/e/8/e8e85bc4c16379f6aa21c6bcce6e82d41257ca34_2_1024x532.png"
     },
     {
       "id": "ka-124714",
@@ -1174,7 +1225,8 @@
         "{'id': 71, 'name': 'themes', 'slug': 'themes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/krita-sk-pale-theme-pack-7-color-themes-free/124714"
+      "page_url": "https://krita-artists.org/t/krita-sk-pale-theme-pack-7-color-themes-free/124714",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/e/e/eef74f7e0b4171b30083fea01adbaf464ae09f38_2_1024x576.png"
     },
     {
       "id": "ka-2776",
@@ -1186,7 +1238,8 @@
       "description": "Hi all, You know i am a brush lover. So here i will be posting some crazy ideas or finished ones like this. This idea comes from the fact i have a folder with lot of testing and maybe it…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/experimental-pencils-and-much-more/2776"
+      "page_url": "https://krita-artists.org/t/experimental-pencils-and-much-more/2776",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/2X/a/aedbe99b4a7d145ac9845d5da60620795e1c8e71_2_1024x682.jpeg"
     },
     {
       "id": "ka-182559",
@@ -1201,7 +1254,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/inserts-noise-bundle/182559"
+      "page_url": "https://krita-artists.org/t/inserts-noise-bundle/182559",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/b/8b0ab4fb759aa0c3e92b1b33f42535ecf8393015_2_1024x603.jpeg"
     },
     {
       "id": "ka-75019",
@@ -1216,7 +1270,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/alcohol-markers-2-0/75019"
+      "page_url": "https://krita-artists.org/t/alcohol-markers-2-0/75019",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/b/8/b89bf15857fa53af52f3efaa58bab5fecc81d3cb_2_1024x1024.jpeg"
     },
     {
       "id": "ka-84120",
@@ -1228,7 +1283,8 @@
       "description": "Hi! I have made my favorite line brush these day and I want to share with you! line smooth brush: pencil: There’re three brushes: b) Basic-NekoT Brush Detail b) Basic-NekoT Brush pensil b)…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/nekot-line-brush-2-0/84120"
+      "page_url": "https://krita-artists.org/t/nekot-line-brush-2-0/84120",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/7/b/7bb2c64dec5e74916503d21336a847e52c443c3c_2_1024x1016.jpeg"
     },
     {
       "id": "ka-120746",
@@ -1240,7 +1296,8 @@
       "description": "「WhiteBear Fx Brush Pack」 “16 handcrafted brushes, refined over 4 years!” Multi-Style Versatility Perfect for anime, painting, sketching & more! Optimized for Flow My personal go-to…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/whitebears-brush-arsenal-the-secret-behind-my-4-year-old-brushes-revealed/120746"
+      "page_url": "https://krita-artists.org/t/whitebears-brush-arsenal-the-secret-behind-my-4-year-old-brushes-revealed/120746",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/0/1/0123218583935551e0c44cde422f5c37141ff03f_2_1024x591.jpeg"
     },
     {
       "id": "ka-15634",
@@ -1252,7 +1309,8 @@
       "description": "Since I can’t edit the old post anymore I created a new one! Hello there! A while ago, I made some new color schemes (themes) for Krita, and now I have made a huge update. Here what’s…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/zoldyakos-themes-for-krita-v2/15634"
+      "page_url": "https://krita-artists.org/t/zoldyakos-themes-for-krita-v2/15634",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/c/3/c37672430a008369e60fa4a74c9e000021d1780f.gif"
     },
     {
       "id": "ka-50108",
@@ -1264,7 +1322,8 @@
       "description": "Hello, I’m really intrigued by the Jarry H. brushes in this link But it seems the page is down. Would anyone be able to share them?",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/jarry-h-line-brush-set/50108"
+      "page_url": "https://krita-artists.org/t/jarry-h-line-brush-set/50108",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/d/8/d8a3ddf06d0c93b520492b6938ecb384cbbb4cee_2_1024x713.jpeg"
     },
     {
       "id": "ka-92064",
@@ -1276,7 +1335,8 @@
       "description": "Sometimes I find people looking for such a brush. It’s a little bit tricky to make it and hard to explain, so I just share it here. edit: The trick of making it",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/i-made-a-hollow-brush/92064"
+      "page_url": "https://krita-artists.org/t/i-made-a-hollow-brush/92064",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/8/9/89415f1700e13f7d8ff4b9c298a6b135b73065c7.png"
     },
     {
       "id": "ka-128563",
@@ -1288,7 +1348,8 @@
       "description": "I’m not sure what subcategory I should put this in, but I was watching a tutorial about painting with gradient maps, did some research and stumbled upon a gold mine. I present to you…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/gradient-tool-maps-resources/128563"
+      "page_url": "https://krita-artists.org/t/gradient-tool-maps-resources/128563",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/c/f/cfdf2dcd84ac1ecab429a5c9799351c7c9454e16_2_1024x473.jpeg"
     },
     {
       "id": "ka-69646",
@@ -1302,7 +1363,21 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/inkksunas-spontaneous-brush-bundle-free/69646"
+      "page_url": "https://krita-artists.org/t/inkksunas-spontaneous-brush-bundle-free/69646",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/1/6/16b733870b4d39c16d347de074043ae8d9efb9f4.png"
+    },
+    {
+      "id": "ka-41203",
+      "name": "Realistic Copic marker like brushes",
+      "author": "Hologram",
+      "category": "Nanquim",
+      "format": "Tópico",
+      "license": "Krita-Artists · 103 curtidas",
+      "description": "Although the default marker brushes aren’t bad, I still think they aren’t capturing the way Copic markers work. In reality, the Copic ink comes out wet and takes a while to dry, in the…",
+      "tags": [],
+      "download_url": "",
+      "page_url": "https://krita-artists.org/t/realistic-copic-marker-like-brushes/41203",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/e/5e8302ba2632b63ec062e602432c63249c02034d_2_1024x576.jpeg"
     },
     {
       "id": "ka-72013",
@@ -1314,7 +1389,8 @@
       "description": "The floral brushpack v1 is finished! This is the first of my monetised packs but fear not, it’ll remain monetised for 2 months before becoming pay-what-you-want like my other packs. The…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/inkksunas-floral-brush-bundle-v1-now-free/72013"
+      "page_url": "https://krita-artists.org/t/inkksunas-floral-brush-bundle-v1-now-free/72013",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/4/6/465b19ff6ee3e385015814e2f3ed99b0e4e202a4.png"
     },
     {
       "id": "ka-103530",
@@ -1326,7 +1402,8 @@
       "description": "Hello, this is my first post and contribution to this community. I love Krita, I’ve been using it for many years and it’s my main drawing program. I’ve always liked to do my drawings on…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/proko-pencil-from-infinite-painter-for-krita/103530"
+      "page_url": "https://krita-artists.org/t/proko-pencil-from-infinite-painter-for-krita/103530",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/e/d/ed17577cc63ca2c63317092adb9cfc265bccc4ad.jpeg"
     },
     {
       "id": "ka-192477",
@@ -1340,7 +1417,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/sk3-aka-pencils-for-graphite-lovers/192477"
+      "page_url": "https://krita-artists.org/t/sk3-aka-pencils-for-graphite-lovers/192477",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/6/1/61501a9524e7f4a9aac03cd10f66612d031808e8.jpeg"
     },
     {
       "id": "ka-66311",
@@ -1354,7 +1432,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/jackpack-realwater-legacy-brushes/66311"
+      "page_url": "https://krita-artists.org/t/jackpack-realwater-legacy-brushes/66311",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/e/1/e1af691a7e856c17748e901a9cea7e17d168c8c9_2_688x1023.jpeg"
     },
     {
       "id": "ka-26190",
@@ -1366,7 +1445,8 @@
       "description": "They are here! Do you need to illustrate something for a children book or maybe just mimic the style? I gave a lot of hints in the video. You have timecodes in pinned comment and…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/crayons-for-krita-2021-not-only-brushes/26190"
+      "page_url": "https://krita-artists.org/t/crayons-for-krita-2021-not-only-brushes/26190",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/f/3fe632002c4bccd32328340488b806e548b29ad7_2_1024x576.jpeg"
     },
     {
       "id": "ka-60253",
@@ -1384,7 +1464,8 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/grass-and-fields-brush-pack/60253"
+      "page_url": "https://krita-artists.org/t/grass-and-fields-brush-pack/60253",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/4/6/464662ca061b3fb513a244ac987e8c208ca1b99b.jpeg"
     },
     {
       "id": "ka-83976",
@@ -1399,7 +1480,8 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/art-deco-patterns/83976"
+      "page_url": "https://krita-artists.org/t/art-deco-patterns/83976",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/a/b/ab760c53dd50606c2c4e4a501e401f3d0cdf6d6c_2_1024x1024.jpeg"
     },
     {
       "id": "ka-101493",
@@ -1413,7 +1495,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/bromine-brush/101493"
+      "page_url": "https://krita-artists.org/t/bromine-brush/101493",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/0/e/0efbead6ad2737998f1a967164b121c197937579_2_1024x898.jpeg"
     },
     {
       "id": "ka-34202",
@@ -1425,7 +1508,8 @@
       "description": "Edit* I have updated and added more brushes. Checkout the new pack here: Krita 5 is so easy to use and I can now add another layer of complexity to my smudge brushes. The ability to use…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/thank-you-devs-for-krita-5-particularly-on-whats-possibile-with-smudge-brushes/34202"
+      "page_url": "https://krita-artists.org/t/thank-you-devs-for-krita-5-particularly-on-whats-possibile-with-smudge-brushes/34202",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/f/3/f32db71a6647338f82180cdd9d6d541d74d1b17a.jpeg"
     },
     {
       "id": "ka-54324",
@@ -1440,7 +1524,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/updated-free-pixelated-glitch-brush-pack/54324"
+      "page_url": "https://krita-artists.org/t/updated-free-pixelated-glitch-brush-pack/54324",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/c/b/cb56377bf4d81e8ab3f47598c81c75863e3b98f8_2_1024x744.png"
     },
     {
       "id": "ka-92216",
@@ -1454,7 +1539,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/nekos-free-line-brushes-pack-v3-v2/92216"
+      "page_url": "https://krita-artists.org/t/nekos-free-line-brushes-pack-v3-v2/92216",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/e/c/ec0e4296f2fe72e3c26fc3a7d2af7e33b92c1ece.png"
     },
     {
       "id": "ka-76064",
@@ -1469,7 +1555,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/star-brushes/76064"
+      "page_url": "https://krita-artists.org/t/star-brushes/76064",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/d/3/d376e0d237f6b3234b35b1f9e5550740772d7562.jpeg"
     },
     {
       "id": "ka-116481",
@@ -1484,7 +1571,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/extreme-brushes-from-hell/116481"
+      "page_url": "https://krita-artists.org/t/extreme-brushes-from-hell/116481",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/e/7/e777a2c23282e502963b8d298441e64c39e0eaef_2_819x1024.jpeg"
     },
     {
       "id": "ka-61073",
@@ -1499,7 +1587,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/nahums-ink-pens-for-manga/61073"
+      "page_url": "https://krita-artists.org/t/nahums-ink-pens-for-manga/61073",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/c/8c063b848f7c2c8b6500029c6413dea1bf8150eb_2_1024x479.jpeg"
     },
     {
       "id": "ka-185877",
@@ -1516,7 +1605,8 @@
         "{'id': 114, 'name': 'payment-required', 'slug': 'payment-required'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/a-few-brush-bundles-ive-recently-discovered-5-free-ones-and-1-paid/185877"
+      "page_url": "https://krita-artists.org/t/a-few-brush-bundles-ive-recently-discovered-5-free-ones-and-1-paid/185877",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/a/5/a50814673d4886c50c7cc8ee8825e2a863c5df33.jpeg"
     },
     {
       "id": "ka-143331",
@@ -1531,7 +1621,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/energy-brush-by-kritalike-team/143331"
+      "page_url": "https://krita-artists.org/t/energy-brush-by-kritalike-team/143331",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/7/87351056dcd4e19e9b10591d842e4b6ffce12979_2_1024x1024.jpeg"
     },
     {
       "id": "ka-185158",
@@ -1546,7 +1637,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/wispy-hair-brushes-charity-bundle-all-tips-fund-endometriosis-surgery/185158"
+      "page_url": "https://krita-artists.org/t/wispy-hair-brushes-charity-bundle-all-tips-fund-endometriosis-surgery/185158",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/1/b/1bd10abcfeb096a59e708e4c5ff82a834c430b1d_2_1024x676.png"
     },
     {
       "id": "ka-143048",
@@ -1558,7 +1650,8 @@
       "description": "Not so hyped about Inktober? Maybe some new inks will provide a little motivation ✧(•̀ᴗ•́)✧ Download Here! : This is a set of 3 black (only!) inks, with built in dye-bleed effects. ⊰-⊱ ✦…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/inks-by-draneria/143048"
+      "page_url": "https://krita-artists.org/t/inks-by-draneria/143048",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/f/5fd18cc207b5ad8004a0650c8eaf61d3e0a20ffa_2_1024x807.jpeg"
     },
     {
       "id": "ka-118411",
@@ -1573,7 +1666,21 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/32-book-brushes/118411"
+      "page_url": "https://krita-artists.org/t/32-book-brushes/118411",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/7/c/7ce8ccc6f3fee50fe37f9333cfcef0e3ac21f7a1_2_1024x576.jpeg"
+    },
+    {
+      "id": "ka-110321",
+      "name": "iForce73 - Environments 2.0 - Michelist Re-Pack",
+      "author": "Michael Strothotte",
+      "category": "Pintura",
+      "format": "Tópico",
+      "license": "Krita-Artists · 85 curtidas",
+      "description": "Today, I would like to make a small gift to the community, simply because other users keep asking for this resource collection and how to install it on Krita 5. ¹ Since iForce73 has not…",
+      "tags": [],
+      "download_url": "",
+      "page_url": "https://krita-artists.org/t/iforce73-environments-2-0-michelist-re-pack/110321",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/f/b/fb7961e1a02adaf60a8a90b96c3eabf11bc88645_2_1024x1019.webp"
     },
     {
       "id": "ka-34797",
@@ -1585,7 +1692,8 @@
       "description": "One issue I’ve always had with many brush packs I’ve seen is a lack of good hard edge brushes. There’s many great options out there for very delicate soft edged painting but leave a lot to…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/awez-hard-rough-brushes-for-krita-5/34797"
+      "page_url": "https://krita-artists.org/t/awez-hard-rough-brushes-for-krita-5/34797",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/6/3/634ddc6ade147201e4d78b4ccd3f8532a46b351b_2_1024x935.jpeg"
     },
     {
       "id": "ka-61458",
@@ -1599,7 +1707,8 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/clooms-concept-art-environments-brushes-pack/61458"
+      "page_url": "https://krita-artists.org/t/clooms-concept-art-environments-brushes-pack/61458",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/e/d/ed3644b70571835a9460bc92b08af2e30c1fccc0_2_341x1024.jpeg"
     },
     {
       "id": "ka-119885",
@@ -1613,7 +1722,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/realistic-ish-pencil-brush/119885"
+      "page_url": "https://krita-artists.org/t/realistic-ish-pencil-brush/119885",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/7/f/7f4f3f77f5e40887388d98224c14208c0ca3a692_2_1024x768.jpeg"
     },
     {
       "id": "ka-148429",
@@ -1627,7 +1737,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/lo-genga-brushes/148429"
+      "page_url": "https://krita-artists.org/t/lo-genga-brushes/148429",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/e/4/e485d8d3c0f33b2ad89daf44f4c361bcf058a872.png"
     },
     {
       "id": "ka-31580",
@@ -1639,7 +1750,8 @@
       "description": "DOWNLOADS My Paint Bundles: ← DOWNLOAD THIS!!! MyPaint Krita Brush Presets(.kpp) Download Link. Only download if there’s any certain mypaint brushes you want to use but don’t want to…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/fizzyflowers-ultimate-mypaint-brush-collection/31580"
+      "page_url": "https://krita-artists.org/t/fizzyflowers-ultimate-mypaint-brush-collection/31580",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/b/5be709bf7590dd81766165e441da445c73995718_2_1024x1024.jpeg"
     },
     {
       "id": "ka-169482",
@@ -1653,7 +1765,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/gege-akutami-brush/169482"
+      "page_url": "https://krita-artists.org/t/gege-akutami-brush/169482",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/e/3/e38b984d5137c327da0e601fbe231dd9f4d7ef9f.jpeg"
     },
     {
       "id": "ka-28036",
@@ -1665,7 +1778,8 @@
       "description": "With the Krita 5 beta out, I’d like to highlight the new feature I’m most excited about - the new pattern blending modes! Thanks to @Deif_Lou for implementing a whole bunch of them. Here…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/graphite-brushes-for-the-new-pattern-blend-modes/28036"
+      "page_url": "https://krita-artists.org/t/graphite-brushes-for-the-new-pattern-blend-modes/28036",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/9/3931af39e3ced1429162a814b2f03dd2939c62fd_2_1024x439.jpeg"
     },
     {
       "id": "ka-185132",
@@ -1679,7 +1793,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/cityscape-brush-set/185132"
+      "page_url": "https://krita-artists.org/t/cityscape-brush-set/185132",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/b/1/b10e802f341b21a54c29b12e5c97a54ebd02fe8d_2_1024x428.png"
     },
     {
       "id": "ka-76587",
@@ -1694,7 +1809,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/hearts-watercolor-brushes/76587"
+      "page_url": "https://krita-artists.org/t/hearts-watercolor-brushes/76587",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/5/5/5551def07ea38037b16758b23eb46949e41281e2.jpeg"
     },
     {
       "id": "ka-64799",
@@ -1709,7 +1825,21 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/paolo-puggioni-krita-cloud-brushes/64799"
+      "page_url": "https://krita-artists.org/t/paolo-puggioni-krita-cloud-brushes/64799",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/7/8/784d9ed4208ccd5c769dafc23d60c3644315064a_2_1024x685.webp"
+    },
+    {
+      "id": "ka-58006",
+      "name": "Hi-uni 2b pencil brush",
+      "author": "Ergo",
+      "category": "Lápis",
+      "format": "Tópico",
+      "license": "Krita-Artists · 62 curtidas",
+      "description": "Hello! First post here and wanted to share a pencil brush I made. I used the charcoal pencil by David Revoy as a base. His work is great but it didn’t exactly suit my needs so I modified…",
+      "tags": [],
+      "download_url": "",
+      "page_url": "https://krita-artists.org/t/hi-uni-2b-pencil-brush/58006",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/5/b/5b747c22822dda99ee41055b6902e9551053fcdb.jpeg"
     },
     {
       "id": "ka-185223",
@@ -1721,7 +1851,8 @@
       "description": "Guess who discovered how animated brushes work tldr: 3 FREE crowd brush for manga and webtoon artists Why crowd brush? Speeds the workflow for making manga and webtoons It saves time I…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/crowd-human-brush-for-comic-and-manga-artists/185223"
+      "page_url": "https://krita-artists.org/t/crowd-human-brush-for-comic-and-manga-artists/185223",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/6/1/61a90f6717b21b079c8b88e292893f6e7e063223_2_683x1024.jpeg"
     },
     {
       "id": "ka-194049",
@@ -1733,7 +1864,8 @@
       "description": "Hello everyone, I have created a brush set that simulates Chinese ink wash painting. Here is a preview of some of the brush effects: Inking Brushes and Coloring Brushes Flatting Brushes…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/chinese-style-ink-brushes/194049"
+      "page_url": "https://krita-artists.org/t/chinese-style-ink-brushes/194049",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/a/5/a5547c9d5dbfc839dfa99d44dfe58c874b2b80b6_2_1024x587.jpeg"
     },
     {
       "id": "ka-121309",
@@ -1748,7 +1880,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/brush-set-line-art-without-pressure-sensitivity-mouse-and-touch/121309"
+      "page_url": "https://krita-artists.org/t/brush-set-line-art-without-pressure-sensitivity-mouse-and-touch/121309",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/f/d/fd9e22c57c974673cbb1d6f45911c6c0cfbe03af_2_1024x909.jpeg"
     },
     {
       "id": "ka-193432",
@@ -1762,7 +1895,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/starlight-gouache-brush-recreation/193432"
+      "page_url": "https://krita-artists.org/t/starlight-gouache-brush-recreation/193432",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/4/1/41c59aaceb13979c68f060bda0f50ce983c69753_2_723x1024.jpeg"
     },
     {
       "id": "ka-179647",
@@ -1777,7 +1911,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/ultimate-krita-pastel-brushes-vol-1/179647"
+      "page_url": "https://krita-artists.org/t/ultimate-krita-pastel-brushes-vol-1/179647",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/9/c/9ce8a70b62cd074d0d5c97b4c4349aaff266540f.jpeg"
     },
     {
       "id": "ka-192995",
@@ -1785,14 +1920,15 @@
       "author": "Juan Camilo Prada",
       "category": "Nanquim",
       "format": "Tópico",
-      "license": "Krita-Artists · 40 curtidas",
+      "license": "Krita-Artists · 41 curtidas",
       "description": "Hello everyone. I’ve decided to release my brush bundle focused on Manga and Black and White comics creation. You can download it directly here: manga-brush-bundle-v1.0.zip The bundle is…",
       "tags": [
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}",
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/juankpradas-manga-brushes-bundle/192995"
+      "page_url": "https://krita-artists.org/t/juankpradas-manga-brushes-bundle/192995",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/7/3/73600999cedd28d5fd712665a8ef752753043664_2_1024x619.jpeg"
     },
     {
       "id": "ka-190931",
@@ -1807,7 +1943,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/brush-designs-borders-and-decorative-brushes/190931"
+      "page_url": "https://krita-artists.org/t/brush-designs-borders-and-decorative-brushes/190931",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/d/f/dfc04e9f867202da2b3cbe5f38716aba4d8ae397_2_1024x902.jpeg"
     },
     {
       "id": "ka-193721",
@@ -1822,7 +1959,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/78s-chalkpen/193721"
+      "page_url": "https://krita-artists.org/t/78s-chalkpen/193721",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/d/6/d6067e9a4d0159ecabcb54f855ed8b6639217ec2_2_1024x723.jpeg"
     },
     {
       "id": "ka-193410",
@@ -1836,7 +1974,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/custom-brushes-mostly-textured-and-kind-of-wispy/193410"
+      "page_url": "https://krita-artists.org/t/custom-brushes-mostly-textured-and-kind-of-wispy/193410",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/c/d/cd572a8a30d118dca3a3052374dd7e0c43903115_2_684x1023.jpeg"
     },
     {
       "id": "ka-52768",
@@ -1850,7 +1989,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/the-line-color-becomes-darker-brush-or-color-plus-a-brush-that-doesnt-know-what-to-call/52768"
+      "page_url": "https://krita-artists.org/t/the-line-color-becomes-darker-brush-or-color-plus-a-brush-that-doesnt-know-what-to-call/52768",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/4/7/47cace5c1ae70e5c9c09f44e18ce3e8a50a95323.png"
     },
     {
       "id": "ka-192439",
@@ -1866,19 +2006,8 @@
         "{'id': 73, 'name': 'textures', 'slug': 'textures'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/al-painting-bundle/192439"
-    },
-    {
-      "id": "ka-162380",
-      "name": "Random Bundle",
-      "author": "Sara",
-      "category": "Pintura",
-      "format": "Tópico",
-      "license": "Krita-Artists · 26 curtidas",
-      "description": "HELLO KRITALINGS i have come with a bundle for you all. i made these for fun just to make something in krita. i rarely see any new brushes posted so i wanted to contribute!! i hope you…",
-      "tags": [],
-      "download_url": "",
-      "page_url": "https://krita-artists.org/t/random-bundle/162380"
+      "page_url": "https://krita-artists.org/t/al-painting-bundle/192439",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/f/1/f120837a9353f1aa4f1b2f7aca58033483dd37af_2_1024x598.jpeg"
     },
     {
       "id": "ka-184470",
@@ -1893,7 +2022,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/wobbly-ink-brush/184470"
+      "page_url": "https://krita-artists.org/t/wobbly-ink-brush/184470",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/d/e/de37ddc3b51dbe4c1740f9037d1b00d067f4d840.png"
     },
     {
       "id": "ka-192754",
@@ -1908,7 +2038,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/78s-chalk-and-dry-ink/192754"
+      "page_url": "https://krita-artists.org/t/78s-chalk-and-dry-ink/192754",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/7/e/7e318dfa3ce63f91817da6cb3b9c14c6aa0a6d38_2_1024x723.jpeg"
     },
     {
       "id": "ka-192497",
@@ -1922,7 +2053,8 @@
         "{'id': 114, 'name': 'payment-required', 'slug': 'payment-required'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/borders-and-decorative-brushes/192497"
+      "page_url": "https://krita-artists.org/t/borders-and-decorative-brushes/192497",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/5/1/5172c0b439c2b298651ad0d13ab992707c48eaf4.png"
     },
     {
       "id": "ka-194459",
@@ -1937,7 +2069,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/comic-brush-bundles-crosshatching-fx-stamps/194459"
+      "page_url": "https://krita-artists.org/t/comic-brush-bundles-crosshatching-fx-stamps/194459",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/4/9/4998aff67992176609f5e708a1d625a3e348306d.png"
     },
     {
       "id": "ka-193700",
@@ -1952,7 +2085,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/gouache-brush-set-for-krita/193700"
+      "page_url": "https://krita-artists.org/t/gouache-brush-set-for-krita/193700",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/3/1/3149da4fffe9c1cae76293f83c6d02ead7d31a64_2_1024x1024.jpeg"
     },
     {
       "id": "ka-194006",
@@ -1967,7 +2101,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/outline-brush-by-kritalike/194006"
+      "page_url": "https://krita-artists.org/t/outline-brush-by-kritalike/194006",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/2/82944982bfb9fa68e904cf5d76c6cb59c01520cd_2_1024x1024.jpeg"
     },
     {
       "id": "ka-194503",
@@ -1979,7 +2114,8 @@
       "description": "Hi, this is my first time posting here. So I wanted to share some brushes i’ve created this year! These are all free to use and modify as you like! Here is a quick drawing i made using…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/evans-stupid-idiot-brush-bundle/194503"
+      "page_url": "https://krita-artists.org/t/evans-stupid-idiot-brush-bundle/194503",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/b/a/bad6a2e924220a77fc4190e792eaa712cbd3827f_2_564x1024.jpeg"
     },
     {
       "id": "ka-193480",
@@ -1991,7 +2127,8 @@
       "description": "It is a binary brush. Download it here:",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/kelguys-binary-brush/193480"
+      "page_url": "https://krita-artists.org/t/kelguys-binary-brush/193480",
+      "preview_url": ""
     },
     {
       "id": "ka-193736",
@@ -2005,7 +2142,8 @@
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/11-12-2026-brush-bundle-1/193736"
+      "page_url": "https://krita-artists.org/t/11-12-2026-brush-bundle-1/193736",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/e/9/e9a885bdf1c01f571a014baa05a68d0d9643fc83.png"
     },
     {
       "id": "ka-192807",
@@ -2020,7 +2158,8 @@
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/linework-details/192807"
+      "page_url": "https://krita-artists.org/t/linework-details/192807",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/e/8e71dfddc5c3f2cb46e6dfb8eb827752a3ef6ed3_2_1024x1024.jpeg"
     },
     {
       "id": "ka-193632",
@@ -2034,7 +2173,8 @@
         "{'id': 72, 'name': 'palletes', 'slug': 'palletes'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/classical-earth-tones-12-colors/193632"
+      "page_url": "https://krita-artists.org/t/classical-earth-tones-12-colors/193632",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/8/4/84c2a533b96ba7209ea13fbd056bf897a9e47d38_2_1024x724.jpeg"
     },
     {
       "id": "ka-192322",
@@ -2046,7 +2186,8 @@
       "description": "A set of custom feather frame brushes (and more) designed to create soft borders, frames, and intricate decorative elements for your artwork. 1 File Brush Present 1 File Brush Tip Download…",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/wing-brush-feather-wing-brush/192322"
+      "page_url": "https://krita-artists.org/t/wing-brush-feather-wing-brush/192322",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/c/2/c27fca57f3b59abf29746bf68ac81c73a5a41ec3.png"
     },
     {
       "id": "ka-193705",
@@ -2058,7 +2199,8 @@
       "description": "This is a recreation of FireAlpaca’s Line Art Pencil. Download here:",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/firealpacas-lineart-pencil-recreation/193705"
+      "page_url": "https://krita-artists.org/t/firealpacas-lineart-pencil-recreation/193705",
+      "preview_url": "https://krita-artists.org/uploads/default/original/3X/c/7/c70cf26d41a506047ada760a2582c7bd2acbdfa6.png"
     },
     {
       "id": "ka-193102",
@@ -2070,22 +2212,24 @@
       "description": "Download here the designed items brush collection includes 30 brushes, and you can customize them to suit your needs.",
       "tags": [],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/doky-brush-a-collection-of-decorative-brushes/193102"
+      "page_url": "https://krita-artists.org/t/doky-brush-a-collection-of-decorative-brushes/193102",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/0/6/06636af79d587eea45373627751a61cdf802a9be_2_995x1024.jpeg"
     },
     {
-      "id": "ka-192102",
-      "name": "My first brush ever created!",
-      "author": "whysoserious?",
-      "category": "Nanquim",
+      "id": "ka-194318",
+      "name": "Ocean's Brushes Bundle ! ~ Coral, Kelp & critters ~",
+      "author": "Savina Sköll",
+      "category": "Pintura",
       "format": "Tópico",
       "license": "Krita-Artists · 10 curtidas",
-      "description": "this bundle had 4+ brushes! (also some are not completed yet) and so you can also fix it if you want but have fun while using the brushes! link:",
+      "description": "I was working on an ocean illustration and got bored (really lazy tbh) of drawing corals and kelp and I couldn’t find anything for Krita, so.. I made brushes, enjoy ! (Yeah it defo took me…",
       "tags": [
         "{'id': 70, 'name': 'brushes', 'slug': 'brushes'}",
         "{'id': 75, 'name': 'bundles', 'slug': 'bundles'}"
       ],
       "download_url": "",
-      "page_url": "https://krita-artists.org/t/my-first-brush-ever-created/192102"
+      "page_url": "https://krita-artists.org/t/oceans-brushes-bundle-coral-kelp-critters/194318",
+      "preview_url": "https://krita-artists.org/uploads/default/optimized/3X/5/9/59cb70b9babd8443533c2a7e5373bb254c778ef4_2_763x1024.jpeg"
     },
     {
       "id": "portal-krita-artists-brushes",

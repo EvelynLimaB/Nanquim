@@ -161,8 +161,75 @@ def is_direct_download_host(url: str) -> bool:
     return not any(b in host for b in blocked)
 
 
-def extract_direct_download(posts: list[dict[str, Any]], author_username: str) -> tuple[str, str]:
-    """Procura o melhor link direto (.bundle > .kpp > .sut > .zip) nos posts do autor."""
+BROWSER_UA = ("Mozilla/5.0 (Linux; Android 16; Tablet) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/130.0 Safari/537.36")
+
+
+def normalize_download(url: str) -> str:
+    """Transforma links de compartilhamento em links de download (mesma regra do app)."""
+    p = urllib.parse.urlparse(url)
+    host = p.netloc.lower()
+    if host.endswith("dropbox.com"):
+        q = [(k, v) for k, v in urllib.parse.parse_qsl(p.query, keep_blank_values=True) if k != "dl"]
+        q.append(("dl", "1"))
+        return urllib.parse.urlunparse(p._replace(query=urllib.parse.urlencode(q)))
+    if host == "drive.google.com":
+        m = re.search(r"/file/d/([A-Za-z0-9_-]+)", p.path)
+        fid = m.group(1) if m else dict(urllib.parse.parse_qsl(p.query)).get("id", "")
+        if fid:
+            return f"https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t"
+    if host == "github.com" and "/blob/" in p.path:
+        return urllib.parse.urlunparse(p._replace(path=p.path.replace("/blob/", "/raw/", 1)))
+    return url
+
+
+def verify_download(url: str) -> str:
+    """Baixa só o começo do arquivo e confere se é mesmo um pacote.
+    Devolve a extensão real (.bundle, .zip, .kpp, .sut) ou "" se o link não serve."""
+    req = urllib.request.Request(url, headers={
+        "User-Agent": BROWSER_UA,
+        "Accept": "application/octet-stream,application/zip,*/*;q=0.8",
+        "Range": "bytes=0-4095",
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            head = resp.read(4096)
+    except Exception as e:
+        print(f"    link falhou ({e.__class__.__name__}): {url}", file=sys.stderr)
+        return ""
+    if head.startswith(b"PK\x03\x04"):
+        return ".bundle" if b"x-krita-resourcebundle" in head else ".zip"
+    if head.startswith(b"\x89PNG"):
+        return ".kpp"
+    if head.startswith(b"SQLite format 3"):
+        return ".sut"
+    print(f"    não é pacote (provavelmente página ou login): {url}", file=sys.stderr)
+    return ""
+
+
+def first_verified(candidates: list[tuple[str, str]], limit: int = 4) -> tuple[str, str]:
+    for url, _ext in candidates[:limit]:
+        norm = normalize_download(url)
+        real_ext = verify_download(norm)
+        if real_ext:
+            return norm, real_ext
+    return "", ""
+
+
+def preview_from(topic: dict[str, Any], detail: dict[str, Any], first_post: dict[str, Any]) -> str:
+    """Imagem de prévia: a miniatura do tópico ou a primeira imagem do primeiro post."""
+    url = str(topic.get("image_url") or detail.get("image_url") or "")
+    if not url:
+        for src in re.findall(r'<img\b[^>]*\bsrc=["\']([^"\']+)["\']', str(first_post.get("cooked") or ""), flags=re.I):
+            if not any(k in src for k in ("emoji", "avatar", "user_avatar")):
+                url = src
+                break
+    url = normalize_url(url) if url else ""
+    return url if url.startswith("https://") else ""
+
+
+def extract_direct_download(posts: list[dict[str, Any]], author_username: str) -> list[tuple[str, str]]:
+    """Lista os links candidatos (.bundle > .kpp > .sut > .zip) nos posts do autor, do melhor ao pior."""
     candidates: list[tuple[int, str, str]] = []
     anchor_re = re.compile(r"<a\b([^>]*)>(.*?)</a>", flags=re.I | re.S)
     href_re = re.compile(r'href\s*=\s*["\']([^"\']+)["\']', flags=re.I)
@@ -204,11 +271,14 @@ def extract_direct_download(posts: list[dict[str, Any]], author_username: str) -
         if candidates and idx == 0:
             break
 
-    if not candidates:
-        return "", ""
     candidates.sort(key=lambda c: c[0])
-    _, best_url, best_ext = candidates[0]
-    return best_url, best_ext
+    seen: set[str] = set()
+    out: list[tuple[str, str]] = []
+    for _, u, e in candidates:
+        if u not in seen:
+            seen.add(u)
+            out.append((u, e))
+    return out
 
 
 def classify_category(title: str, tags: list[str], description: str) -> str:
@@ -327,7 +397,9 @@ def build_catalog(
             first_uid = t["posters"][0].get("user_id")
             author_display = users_by_id.get(int(first_uid or 0), "Comunidade Krita")
 
-        download_url, ext = extract_direct_download(posts, author_username)
+        # só vira "Instalar" se o arquivo realmente baixa (sem login nem página no meio)
+        download_url, ext = first_verified(extract_direct_download(posts, author_username))
+        preview_url = preview_from(t, detail, first_post)
         desc = clean_description(str(first_post.get("cooked") or ""))
         if not desc:
             desc = "Pacote de pincéis compartilhado pela comunidade no Krita-Artists."
@@ -355,6 +427,7 @@ def build_catalog(
             "tags": tags,
             "download_url": download_url,
             "page_url": page_url,
+            "preview_url": preview_url,
         }
 
         if download_url:

@@ -1,0 +1,80 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Nanquim <nanquim@users.noreply.github.com>
+Date: Wed, 25 Nov 2026 17:00:00 -0300
+Subject: [PATCH] Nanquim: estabilizador mais leve (textura 256 px e time-lapse calmo)
+
+Gravação de tela da build 94: com o estabilizador, o traço ficava para trás da
+caneta numa página de 6071 x 8598 px. Duas diferenças do Nanquim para o Krita normal:
+- Blocos de textura da GPU de 512 px (patch 0075): num traço fino, cada atualização
+  reenviava um bloco 4x maior. Volta ao padrão do Krita (256 px); quem tinha 512
+  guardado volta também, uma vez só
+- Time-lapse automático: cada pausa de 0,7 s entre traços reduzia a página inteira
+  (52 MP) e disputava o processador com o pincel. Agora espera 2,5 s parado, no
+  mínimo 6 s entre quadros, e reduz com metade do trabalho
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_012fwRUYPpG2prvZV1MLpuhj
+---
+ libs/ui/NanquimTabletUi.cpp | 19 ++++++++++++++++---
+ libs/ui/kis_config.cc       |  5 +++--
+ 2 files changed
+
+diff --git a/libs/ui/NanquimTabletUi.cpp b/libs/ui/NanquimTabletUi.cpp
+--- a/libs/ui/NanquimTabletUi.cpp
++++ b/libs/ui/NanquimTabletUi.cpp
+@@ -2220,8 +2220,10 @@ private:
+             }
+         }
+         if (!image || !view->document() || !m_dirty || !enabled()) return;
+-        // espera o traço terminar (0,7 s sem mudanças) e no mínimo 2 s entre quadros
+-        if (m_sinceChange.elapsed() < 700 || m_sinceCapture.elapsed() < 2000) return;
++        // só grava com a caneta parada de verdade (2,5 s sem mudanças) e no mínimo 6 s
++        // entre quadros: antes, cada pausa de 0,7 s entre traços de hachura disparava a
++        // redução da página inteira e disputava o processador com o pincel
++        if (m_sinceChange.elapsed() < 2500 || m_sinceCapture.elapsed() < 6000) return;
+         // desenho recém-aberto: a imagem ainda está sendo montada
+         if (m_sinceTracked.elapsed() < 4000) return;
+         // nada de quadro enquanto o desenho é salvo (inclusive o salvamento automático)
+@@ -2259,7 +2261,7 @@ private:
+         image->addSpontaneousJob(new NanquimTimelapseCopyJob(projection, bounds,
+                 [bounds, w, h, dir, file, busy, next](KisPaintDeviceSP copy) {
+         QtConcurrent::run([copy, bounds, w, h, dir, file, busy, next]() mutable {
+-            QImage thumb = copy->createThumbnailUncached(w, h, bounds, 2);
++            QImage thumb = copy->createThumbnailUncached(w, h, bounds, 1);
+             if (!thumb.isNull()) {
+                 QImage frame(w, h, QImage::Format_RGB32);
+                 frame.fill(Qt::white);
+@@ -16964,6 +16966,16 @@ void NanquimTabletUi::install(KisMainWindow *mw)
+ {
+     s_classic = isClassicMode();
+     s_recorder = new NanquimTimelapseRecorder(mw);
++    // blocos de textura de 512 px (patch 0075) pesavam no traço fino com estabilizador;
++    // quem ficou com 512 guardado volta para o padrão (256), uma vez só
++    {
++        KConfigGroup nq = KSharedConfig::openConfig()->group("Nanquim");
++        if (!nq.readEntry("textureSize256", false)) {
++            KConfigGroup general = KSharedConfig::openConfig()->group("");
++            if (general.readEntry("textureSize", 0) == 512) general.deleteEntry("textureSize");
++            nq.writeEntry("textureSize256", true);
++        }
++    }
+     if (!s_classic) {
+         buildColorDock(mw);   // antes da barra: o botão de cor abre este painel
+         buildTopBar(mw);
+diff --git a/libs/ui/kis_config.cc b/libs/ui/kis_config.cc
+--- a/libs/ui/kis_config.cc
++++ b/libs/ui/kis_config.cc
+@@ -1145,7 +1145,8 @@
+ int KisConfig::openGLTextureSize(bool defaultValue) const
+ {
+ #ifdef Q_OS_ANDROID
+-    // Nanquim: blocos de 512 px reduzem em 4x os uploads na GPU em páginas grandes
+-    const int fallback = 512;
++    // Nanquim: volta aos 256 px do Krita. Com 512 px cada traço fino reenviava
++    // blocos 4x maiores para a GPU e o estabilizador ficava pesado (build 94)
++    const int fallback = 256;
+ #else
+     const int fallback = 256;
+ #endif
+-- 
+2.43.0
